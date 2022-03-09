@@ -1,0 +1,7 @@
+.sidebar-menu__stages-item {
+  margin-bottom: 16px;
+}
+
+.sidebar-menu__stages-item:last-child {
+  margin-bottom: 0;
+}

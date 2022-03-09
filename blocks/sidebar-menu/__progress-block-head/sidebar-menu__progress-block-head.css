@@ -1,0 +1,11 @@
+.sidebar-menu__progress-block-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-decoration: none;
+  color: #212329;
+}
