@@ -13,3 +13,9 @@
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
 @import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
 @import url(../blocks/content/__design/content__design.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/_state/button_state_active.css);
+@import url(../blocks/button/_state/button_state_inactive.css);
+@import url(../blocks/button/_width/button_width_regular.css);
+@import url(../blocks/button/button__image/button__image.css);
+@import url(../blocks/button/button__image/_position/button__image_position_left.css);
