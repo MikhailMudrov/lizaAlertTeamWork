@@ -9,3 +9,6 @@
 @import url(../blocks/menu/__list-item/menu__list-item.css);
 @import url(../blocks/menu/__icon/menu__icon.css);
 @import url(../blocks/content/content.css);
+@import url(../blocks/breadcrumbs/breadcrumbs.css);
+@import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
+@import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
