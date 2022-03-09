@@ -18,3 +18,11 @@
 @import url(../blocks/result-test/__title/result-test__title.css);
 @import url(../blocks/result-test/_type/_positive/result-test_type_positive.css);
 @import url(../blocks/result-test/_theme/_green/result-test_theme_green.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/_state/button_state_active.css);
+@import url(../blocks/button/_state/button_state_inactive.css);
+@import url(../blocks/button/_width/button_width_regular.css);
+@import url(../blocks/button/_width/button_width_narrow.css);
+@import url(../blocks/button/button__image/button__image.css);
+@import url(../blocks/button/button__image/_position/button__image_position_left.css);
+@import url(../blocks/button/button__image/_position/button__image_position_right.css);
