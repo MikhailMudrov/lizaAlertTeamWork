@@ -30,6 +30,7 @@
 @import url(../blocks/sidebar-menu/__stages/sidebar-menu__stages.css);
 @import url(../blocks/sidebar-menu/__progress-list/sidebar-menu__progress-list.css);
 @import url(../blocks/sidebar-menu/__progress-block/sidebar-menu__progress-block.css);
+@import url(../blocks/sidebar-menu/__link/sidebar-menu__link.css);
 @import url(../blocks/sidebar-menu/__progress-block/_active/sidebar-menu__progress-block_active.css);
 @import url(../blocks/sidebar-menu/__progress-block-head/sidebar-menu__progress-block-head.css);
 @import url(../blocks/sidebar-menu/__progress-block-text/sidebar-menu__progress-block-text.css);
