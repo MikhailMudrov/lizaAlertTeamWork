@@ -1,0 +1,4 @@
+.sidebar-menu__stages-item_type_video-active {
+  color: #FF6600;
+  background-image: url(../../../../images/video_active.svg);
+}

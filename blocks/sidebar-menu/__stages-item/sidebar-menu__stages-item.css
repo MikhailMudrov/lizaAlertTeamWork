@@ -1,7 +1,17 @@
 .sidebar-menu__stages-item {
-  margin-bottom: 16px;
+  margin: 0;
+  padding: 0 0 16px 30px;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-position-x: left;
+  object-fit: contain;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: #212329;
 }
 
 .sidebar-menu__stages-item:last-child {
-  margin-bottom: 0;
+  padding-bottom: 0;
 }

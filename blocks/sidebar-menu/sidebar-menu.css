@@ -1,9 +1,10 @@
 .sidebar-menu {
   box-sizing: border-box;
+  margin: 0;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid red;
   max-width: 424px;
-  padding: 32px;
+  border: 1px solid red;
 }

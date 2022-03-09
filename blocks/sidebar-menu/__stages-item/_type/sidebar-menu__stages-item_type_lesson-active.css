@@ -1,0 +1,4 @@
+.sidebar-menu__stages-item_type_lesson-active {
+  color: #FF6600;
+  background-image: url(../../../../images/lesson_active.svg);
+}

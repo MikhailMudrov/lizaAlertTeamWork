@@ -1,3 +1,11 @@
-.sidebar-menu__progress-block_active {
-
+.sidebar-menu__progress-block_active .sidebar-menu__stages{
+  margin-top: 32px;
+  max-height: 100vh;
+  opacity: 1;
+  transition: max-height .6s ease-in;
 }
+
+.sidebar-menu__progress-block_active .sidebar-menu__progress-block-toggler {
+  background-image: url("../../../../images/sidebar_open-option.svg");
+}
+
