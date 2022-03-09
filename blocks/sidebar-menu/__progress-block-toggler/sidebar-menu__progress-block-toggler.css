@@ -1,0 +1,8 @@
+.sidebar-menu__progress-block-toggler {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 11px;
+  height: 6px;
+  background: content-box url("../../../images/sidebar_close-option.svg") center center/contain no-repeat;
+}

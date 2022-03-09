@@ -1,0 +1,5 @@
+.sidebar-menu__stages-item_type_done {
+  list-style: none;
+  background: url(../../../../images/success.svg) no-repeat left 50%;
+  padding-left: 35px;
+}
