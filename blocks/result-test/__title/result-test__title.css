@@ -3,9 +3,5 @@
   font-size: 48px;
   line-height: 52px;
   text-align: center;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-  margin: 26px auto;
+  margin: 18px auto;
 }
