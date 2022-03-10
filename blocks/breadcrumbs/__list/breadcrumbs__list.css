@@ -4,7 +4,6 @@
     flex-wrap: wrap;
     margin: 0;
     padding-left: 60px;
-    padding-top: 24px;
   }
 
   .breadcrumbs__list .breadcrumbs__item+.breadcrumbs__item::before {
