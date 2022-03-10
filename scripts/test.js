@@ -1,15 +1,32 @@
-import {createSideMenuHandlers} from "./side-menu.js";
+import { createSideMenuHandlers } from "./side-menu.js";
 
 createSideMenuHandlers();
 
-const checkbox = document.querySelectorAll('test__option_checkbox_notactive')
-const container = document.querySelector('.test__option');
+const checkboxChecked = document.querySelectorAll('.test__option_checkbox_notactive');
+const radioChecked = document.querySelectorAll('.test__answer-radio');
 
 
-checkbox.forEach(el => {
-el.addEventListener('click', () => {
-    container.classList.remove('test__option_checkbox_notactive');
-    container.classList.add('test__option_checkbox_active');
+checkboxChecked.forEach(function (checkBox) {
+
+  checkBox.addEventListener('click', function () {
+    if (checkBox.classList.contains("test__option_checkbox_notactive")) {
+      this.classList.remove('test__option_checkbox_notactive');
+      this.classList.add('test__option_checkbox_active');
+    } else {
+      this.classList.remove('test__option_checkbox_active');
+      this.classList.add('test__option_checkbox_notactive');
+    }
+  });
 });
 
+
+radioChecked.forEach(function (radio) {
+  radio.addEventListener('click', function () {
+    if (radio.checked) {
+      radioChecked.forEach(element => {
+        element.parentNode.style.color = '#000';
+        radio.parentNode.style.color = '#f06000';
+      });
+    };
+  });
 });

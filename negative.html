@@ -12,224 +12,224 @@
 </head>
 
 <body class="page">
-  <header class="header">
-    <a class="header__link" target="_blank" href="#">Учебная платформа</a>
-    <nav class="menu">
-      <ul class="menu__list">
-        <li class="menu__list-item">
-          <a id="courses-page-link" class="menu__link" href="#">
-            <img class="menu__icon" src="./images/logo_courses.svg" alt="Курсы">Курсы
-          </a>
-        </li>
-        <li class="menu__list-item">
-          <a class="menu__link" href="#">
-            <img class="menu__icon" src="./images/profile.svg" alt="Профиль">Профиль
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main class="content">
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Курсы</a>
+<header class="header">
+  <a class="header__link" target="_blank" href="#">Учебная платформа</a>
+  <nav class="menu">
+    <ul class="menu__list">
+      <li class="menu__list-item">
+        <a id="courses-page-link" class="menu__link" href="#">
+          <img class="menu__icon" src="./images/logo_courses.svg" alt="Курсы">Курсы
+        </a>
       </li>
-      <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Кинологическое направление</a>
-      </li>
-      <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">5. Работа «второго номера» совместно со следовым кинологическим
-          расчётом</a>
-      </li>
-      <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Тест</a>
+      <li class="menu__list-item">
+        <a class="menu__link" href="#">
+          <img class="menu__icon" src="./images/profile.svg" alt="Профиль">Профиль
+        </a>
       </li>
     </ul>
-    <section class="content-block content__space content__design">
-      <div class="card__header">
-        <h2 class="card__title">Тест</h2>
-        <button class="card__conditions">Посмотреть условия</button>
-      </div>
-      <ol class="test__list">
-        <li class="test__item">
-          <h3 class="test__question">В каких случаях перспективно применение следовых кинологических расчётов?</h3>
-          <label class="test__option test__option_checkbox_active">
-            <input type="checkbox" name="test_checkbox" id="" class="test__answer-checkbox">
-            <span class="test__text">Оказание помощи гражданам, оказавшимся в зонах бедствия или пропавшим в безлюдной
+  </nav>
+</header>
+<nav class="breadcrumbs">
+  <ul class="breadcrumbs__list">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="#">Курсы</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="#">Кинологическое направление</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="#">5. Работа «второго номера» совместно со следовым кинологическим
+        расчётом</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link" href="#">Тест</a>
+    </li>
+  </ul>
+</nav>
+<main class="content">
+  <section class="content-block content__space content__design">
+    <div class="card__header">
+      <h2 class="card__title">Тест</h2>
+      <button class="card__conditions">Посмотреть условия</button>
+    </div>
+    <ol class="test__list">
+      <li class="test__item">
+        <h3 class="test__question">В каких случаях перспективно применение следовых кинологических расчётов?</h3>
+        <label class="test__option test__option_checkbox_notactive">
+          <input type="checkbox" name="test_checkbox" id="" class="test__answer-checkbox">
+          <span class="test__text">Оказание помощи гражданам, оказавшимся в зонах бедствия или пропавшим в безлюдной
               местности</span>
-          </label>
-          <label class="test__option test__option_checkbox_notactive">
-            <input type="checkbox" name="test_checkbox" id="" class="test__answer-checkbox">
-            <span class="test__text">Обучение животного идти как по горячему, так и по остывшему следу</span>
-          </label>
-          <label class="test__option test__option_checkbox_notactive">
-            <input type="checkbox" name="test_checkbox" id="" class="test__answer-checkbox">
-            <span class="test__text">Поиск тел и их остатков с применением специально обученных собак</span>
-          </label>
-        </li>
-        <li class="test__item">
-          <h3 class="test__question">С какого возраста следует начинать дрессировку по курсу ПСС?</h3>
-          <label class="test__option test__option_radio_active">
-            <input type="radio" name="test_radio" id="" class="test__answer-radio" value="first">
-            <span class="test__text">6 месяцев</span>
-          </label>
-          <label class="test__option test__option_radio_notactive">
-            <input type="radio" name="test_radio" id="" class="test__answer-radio" value="second">
-            <span class="test__text">1–1,5 года</span>
-          </label>
-          <label class="test__option test__option_radio_notactive">
-            <input type="radio" name="test_radio" id="" class="test__answer-radio" value="third">
-            <span class="test__text">3 года</span>
-          </label>
-        </li>
-      </ol>
-      <div class="result-test result-test_type_negative">
-        <h3 class="result-test__title result-test_theme_red">33%</h3>
-        <p class="result-test__text result-test_theme_red">К сожалению, вы не набрали проходной результат.</p>
-        <p class="result-test__text result-test_theme_red">Нажмите «Пересдать», чтобы попробовать снова.</p>
-      </div>
-      <button type="button" class="button button_state_active button_width_narrow">
-        <img src="./images/retake-active.svg" alt="Пересдать" class="button__image button__image_position_left">
-        Пересдать
-      </button>
-      <button type="button" class="button button_state_inactive button_width_regular">
-        <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
-        Назад
-      </button>
-      <button type="button" class="button button_state_disabled button_width_regular">
-        Далее
-        <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
-      </button>
-    </section>
-    <aside class="content__sidebar content__design">
-      <div class="sidebar-menu">
-        <h3 class="sidebar-menu__title">Содержание</h3>
-        <ul class="sidebar-menu__progress-list">
+        </label>
+        <label class="test__option test__option_checkbox_notactive">
+          <input type="checkbox" name="test_checkbox" id="" class="test__answer-checkbox">
+          <span class="test__text">Обучение животного идти как по горячему, так и по остывшему следу</span>
+        </label>
+        <label class="test__option test__option_checkbox_notactive">
+          <input type="checkbox" name="test_checkbox" id="" class="test__answer-checkbox">
+          <span class="test__text">Поиск тел и их остатков с применением специально обученных собак</span>
+        </label>
+      </li>
+      <li class="test__item">
+        <h3 class="test__question">С какого возраста следует начинать дрессировку по курсу ПСС?</h3>
+        <label class="test__option test__option_radio_notactive">
+          <input type="radio" name="test_radio" id="" class="test__answer-radio" value="first">
+          <span class="test__text">6 месяцев</span>
+        </label>
+        <label class="test__option test__option_radio_notactive">
+          <input type="radio" name="test_radio" id="" class="test__answer-radio" value="second">
+          <span class="test__text">1–1,5 года</span>
+        </label>
+        <label class="test__option test__option_radio_notactive">
+          <input type="radio" name="test_radio" id="" class="test__answer-radio" value="third">
+          <span class="test__text">3 года</span>
+        </label>
+      </li>
+    </ol>
+    <div class="result-test result-test_type_negative">
+      <h3 class="result-test__title result-test_theme_red">33%</h3>
+      <p class="result-test__text result-test_theme_red">К сожалению, вы не набрали проходной результат.</p>
+      <p class="result-test__text result-test_theme_red">Нажмите «Пересдать», чтобы попробовать снова.</p>
+    </div>
+    <button type="button" class="button button_state_active button_width_narrow">
+      <img src="./images/retake-active.svg" alt="Пересдать" class="button__image button__image_position_left">
+      Пересдать
+    </button>
+  </section>
+  <div class="button__outside-test">
+    <button type="button" class="button button_state_inactive button_width_regular">
+      <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
+      Назад
+    </button>
+    <button type="button" class="button button_state_disabled button_width_regular">
+      Далее
+      <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
+    </button>
+  </div>
+</main>
+<aside class="content__sidebar">
+  <div class="sidebar-menu content__design">
+    <h3 class="sidebar-menu__title">Содержание</h3>
+    <ul class="sidebar-menu__progress-list">
 
-          <li class="sidebar-menu__progress-block">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">1.&nbsp;В&nbsp;каких случаях перспективно применение следовых
-                кинологических расчётов</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-menu__progress-block">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">2.&nbsp;Необходимые обеспечительные меры для&nbsp;успешного
-                применения следовых (розыскных собак)</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-menu__progress-block">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">3.&nbsp;Особенности привлечения следовых расчётов
-                на&nbsp;ПСР&nbsp;и&nbsp;особенности
-                взаимодействия</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Вебинар</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Видео</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Тест</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-menu__progress-block">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">4.&nbsp;Корректная постановка задачи кинологу
-                и&nbsp;особенности
-                её&nbsp;исполнения</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Вебинар</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-menu__progress-block">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">5.&nbsp;Работа «второго номера» совместно со&nbsp;следовым
-                кинологическим расчётом</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Дрессировка поисково-спасательных собак</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Вебинар</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-                <a href="#" class="sidebar-menu__link">Видео</a>
-              </li>
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_test-active">
-                <a href="#" class="sidebar-menu__link">Тест</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-menu__progress-block">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">6.&nbsp;Оценка качества и&nbsp;особенности анализа результата
-                проделанной следовым кинологическим расчётом работы</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_lesson">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
-            <a href="#" class="sidebar-menu__progress-block-head">
-              <p class="sidebar-menu__progress-block-text">7.&nbsp;Особенности и&nbsp;пределы использования РПРС
-                ом&nbsp;полученной
-                в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения
-                поисков</p>
-              <div class="sidebar-menu__progress-block-toggler"></div>
-            </a>
-            <ul class="sidebar-menu__stages">
-              <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_lesson">
-                <a href="#" class="sidebar-menu__link">Урок</a>
-              </li>
-            </ul>
+      <li class="sidebar-menu__progress-block">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">1.&nbsp;В&nbsp;каких случаях перспективно применение следовых
+            кинологических расчётов</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Урок</a>
           </li>
         </ul>
+      </li>
 
-      </div>
-    </aside>
-  </main>
-  <script type="module" src="scripts/negative.js"></script>
+      <li class="sidebar-menu__progress-block">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">2.&nbsp;Необходимые обеспечительные меры для&nbsp;успешного
+            применения следовых (розыскных собак)</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Урок</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-menu__progress-block">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">3.&nbsp;Особенности привлечения следовых расчётов
+            на&nbsp;ПСР&nbsp;и&nbsp;особенности
+            взаимодействия</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Урок</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Вебинар</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Урок</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Видео</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Тест</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar-menu__progress-block">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">4.&nbsp;Корректная постановка задачи кинологу
+            и&nbsp;особенности
+            её&nbsp;исполнения</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Вебинар</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">5.&nbsp;Работа «второго номера» совместно со&nbsp;следовым
+            кинологическим расчётом</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Дрессировка поисково-спасательных собак</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Вебинар</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Урок</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
+            <a href="#" class="sidebar-menu__link">Видео</a>
+          </li>
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_test-active">
+            <a href="#" class="sidebar-menu__link">Тест</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-menu__progress-block">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">6.&nbsp;Оценка качества и&nbsp;особенности анализа результата
+            проделанной следовым кинологическим расчётом работы</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_lesson">
+            <a href="#" class="sidebar-menu__link">Урок</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-menu__progress-block">
+        <a href="#" class="sidebar-menu__progress-block-head">
+          <p class="sidebar-menu__progress-block-text">7.&nbsp;Особенности и&nbsp;пределы использования РПРС
+            ом&nbsp;полученной
+            в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения
+            поисков</p>
+          <div class="sidebar-menu__progress-block-toggler"></div>
+        </a>
+        <ul class="sidebar-menu__stages">
+          <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_lesson">
+            <a href="#" class="sidebar-menu__link">Урок</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</aside>
+<script type="module" src="scripts/negative.js"></script>
 </body>
 
 </html>

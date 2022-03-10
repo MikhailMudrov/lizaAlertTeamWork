@@ -3,4 +3,20 @@
   font-family: Golos, Arial, Helvetica, sans-serif;
   max-width: 1440px;
   margin: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern";
+  color: #212329;
+  display: grid;
+  grid-template-columns: 60% 29%;
+  grid-template-rows: 5% 1% 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "breadcrumbs breadcrumbs"
+    "content content__sidebar"
+    "content content__sidebar ";
+  gap: 24px;
 }

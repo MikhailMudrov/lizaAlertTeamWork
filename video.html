@@ -12,44 +12,42 @@
 </head>
 
 <body class="page">
-<header class="header">
-  <a class="header__link" target="_blank" href="#">Учебная платформа</a>
-  <nav class="menu">
-    <ul class="menu__list">
-      <li class="menu__list-item">
-        <a id="courses-page-link" class="menu__link" href="#">
-          <img class="menu__icon" src="./images/logo_courses.svg" alt="Курсы">Курсы
-        </a>
+  <header class="header">
+    <a class="header__link" target="_blank" href="#">Учебная платформа</a>
+    <nav class="menu">
+      <ul class="menu__list">
+        <li class="menu__list-item">
+          <a id="courses-page-link" class="menu__link" href="#">
+            <img class="menu__icon" src="./images/logo_courses.svg" alt="Курсы">Курсы
+          </a>
+        </li>
+        <li class="menu__list-item">
+          <a class="menu__link" href="#">
+            <img class="menu__icon" src="./images/profile.svg" alt="Профиль">Профиль
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <nav class="breadcrumbs">
+    <ul class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="#">Курсы</a>
       </li>
-      <li class="menu__list-item">
-        <a class="menu__link" href="#">
-          <img class="menu__icon" src="./images/profile.svg" alt="Профиль">Профиль
-        </a>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="#">Кинологическое направление</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="#">5. Работа «второго номера» совместно со следовым кинологическим
+          расчётом</a>
+      </li>
+      <li class="breadcrumbs__item">
+        <a class="breadcrumbs__link" href="#">Видео</a>
       </li>
     </ul>
   </nav>
-
-</header>
-
-<main class="content">
-
-  <ul class="breadcrumbs">
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="#">Курсы</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="#">Кинологическое направление</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="#">5. Работа «второго номера» совместно со следовым кинологическим
-        расчётом</a>
-    </li>
-    <li class="breadcrumbs__item">
-      <a class="breadcrumbs__link" href="#">Видео</a>
-    </li>
-  </ul>
-
-  <section class="content__space content__design">
+  <main class="content">
+      <section class="content__space content__design">
     <div class="player">
       <h1 class="player__heading">Видео</h1>
       <div class="player__container">
@@ -65,24 +63,21 @@
       </div>
     </div>
   </section>
-
-  <div class="action-panel">
-    <button type="button" class="button button_state_inactive button_width_regular button_spaced">
-      <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
-      Назад
-    </button>
-    <button type="button" class="button button_state_active button_width_regular">
-      Далее
-      <img src="./images/forward-arrow-active.svg" alt="Далее" class="button__image button__image_position_right">
-    </button>
-  </div>
-
-  <aside class="content__sidebar content__design">
-
-    <div class="sidebar-menu">
+    <div class="button__outside-test">
+      <button type="button" class="button button_state_inactive button_width_regular">
+        <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
+        Назад
+      </button>
+      <button type="button" class="button button_state_active button_width_regular">
+        <img src="./images/forward-arrow-active.svg" alt="Далее" class="button__image button__image_position_right">
+        Далее
+      </button>
+    </div>
+  </main>
+  <aside class="content__sidebar">
+    <div class="sidebar-menu content__design">
       <h3 class="sidebar-menu__title">Содержание</h3>
       <ul class="sidebar-menu__progress-list">
-
         <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
             <p class="sidebar-menu__progress-block-text">1.&nbsp;В&nbsp;каких случаях перспективно применение следовых
@@ -95,7 +90,6 @@
             </li>
           </ul>
         </li>
-
         <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
             <p class="sidebar-menu__progress-block-text">2.&nbsp;Необходимые обеспечительные меры для&nbsp;успешного
@@ -111,7 +105,8 @@
 
         <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">3.&nbsp;Особенности привлечения следовых расчётов на&nbsp;ПСР&nbsp;и&nbsp;особенности
+            <p class="sidebar-menu__progress-block-text">3.&nbsp;Особенности привлечения следовых расчётов
+              на&nbsp;ПСР&nbsp;и&nbsp;особенности
               взаимодействия</p>
             <div class="sidebar-menu__progress-block-toggler"></div>
           </a>
@@ -136,7 +131,8 @@
 
         <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">4.&nbsp;Корректная постановка задачи кинологу и&nbsp;особенности
+            <p class="sidebar-menu__progress-block-text">4.&nbsp;Корректная постановка задачи кинологу
+              и&nbsp;особенности
               её&nbsp;исполнения</p>
             <div class="sidebar-menu__progress-block-toggler"></div>
           </a>
@@ -147,7 +143,7 @@
           </ul>
         </li>
 
-        <li class="sidebar-menu__progress-block">
+        <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
           <a href="#" class="sidebar-menu__progress-block-head">
             <p class="sidebar-menu__progress-block-text">5.&nbsp;Работа «второго номера» совместно со&nbsp;следовым
               кинологическим расчётом</p>
@@ -185,9 +181,10 @@
           </ul>
         </li>
 
-        <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
+        <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">7.&nbsp;Особенности и&nbsp;пределы использования РПРС ом&nbsp;полученной
+            <p class="sidebar-menu__progress-block-text">7.&nbsp;Особенности и&nbsp;пределы использования РПРС
+              ом&nbsp;полученной
               в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения
               поисков</p>
             <div class="sidebar-menu__progress-block-toggler"></div>
@@ -202,9 +199,7 @@
 
     </div>
   </aside>
-
-</main>
-<script type="module"  src="./scripts/video.js"></script>
+  <script type="module" src="./scripts/video.js"></script>
 </body>
 
 </html>

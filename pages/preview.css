@@ -13,6 +13,16 @@
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
 @import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
 @import url(../blocks/content/__design/content__design.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/content/__title/content__title.css);
+@import url(../blocks/content/__text/content__text.css);
+@import url(../blocks/test/__point/test__point.css);
+@import url(../blocks/test/__list/test__list.css);
+@import url(../blocks/test/__image/test__image.css);
+@import url(../blocks/test/__score/test__score.css);
+@import url(../blocks/test/__tries/test__tries.css);
+@import url(../blocks/test/__time/test__time.css);
+@import url(../blocks/test/__text/test__text.css);
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_state/button_state_active.css);
 @import url(../blocks/button/_state/button_state_inactive.css);
@@ -41,3 +51,7 @@
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video.css);
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video-active.css);
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_webinar.css);
+@import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/content/__sidebar/content__sidebar.css);
+@import url(../blocks/button/__outside-test/button__outside-test.css);
