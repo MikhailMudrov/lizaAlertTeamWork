@@ -1,0 +1,8 @@
+.player__play-button {
+  background-image: url(../../../images/player-play-button.svg);
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  width: 24px;
+  height: 24px;
+}

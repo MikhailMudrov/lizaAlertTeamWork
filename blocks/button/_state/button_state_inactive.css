@@ -3,3 +3,7 @@
   color: #F60;
   border: 1.2px solid #E6E7EB;
 }
+
+.button_state_inactive:hover {
+  border: 1px solid #ff6600;
+}
