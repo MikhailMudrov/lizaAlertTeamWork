@@ -1,0 +1,10 @@
+.test__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e6e7eb;
+  margin: 0 32px;
+}
+
+.test__item:last-child  {
+  border-bottom: none;
+}

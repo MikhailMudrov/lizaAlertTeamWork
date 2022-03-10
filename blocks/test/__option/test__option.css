@@ -1,0 +1,9 @@
+.test__option{
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.test__option:last-child {
+  margin-bottom: 32px;
+}

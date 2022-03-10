@@ -1,0 +1,12 @@
+.card__conditions {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+align-items: center;
+text-align: center;
+}
