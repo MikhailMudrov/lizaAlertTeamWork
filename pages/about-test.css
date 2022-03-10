@@ -41,3 +41,6 @@
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video-active.css);
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_webinar.css);
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
+@import url(../blocks/card/card.css);
+@import url(../blocks/content/__sidebar/content__sidebar.css);
+@import url(../blocks/button/__outside-test/button__outside-test.css);

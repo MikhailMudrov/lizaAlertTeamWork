@@ -1,0 +1,9 @@
+.button__outside-test {
+  display: grid;
+  column-gap: 24px;
+  margin: 0;
+  padding: 24px;
+  justify-content: end;
+  grid-template-rows: 48px;
+  grid-template-columns: 184px 184px;
+}
