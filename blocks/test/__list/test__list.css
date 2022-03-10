@@ -1,6 +1,8 @@
 .test__list {
-  display: flex;
-  flex-direction: column;
+  list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 32px;
+  padding-top: 32px;
 }
