@@ -23,7 +23,6 @@
 @import url(../blocks/test/__tries/test__tries.css);
 @import url(../blocks/test/__time/test__time.css);
 @import url(../blocks/test/__text/test__text.css);
-@import url(../blocks/test/__text/_meaning/test__text_meaning_value.css);
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_state/button_state_active.css);
 @import url(../blocks/button/_state/button_state_inactive.css);
