@@ -1,13 +1,1 @@
-.breadcrumbs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0;
-  padding-left: 60px;
-  padding-top: 24px;
-}
 
-.breadcrumbs .breadcrumbs__item+.breadcrumbs__item::before {
-  content: "\00a0\276F\00a0";
-
-}
