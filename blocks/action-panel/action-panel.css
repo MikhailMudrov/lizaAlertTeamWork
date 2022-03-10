@@ -1,0 +1,8 @@
+.action-panel {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-right: 32px;
+  box-sizing: border-box;
+  max-width: 872px;
+}
