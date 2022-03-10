@@ -3,6 +3,7 @@
   font-family: Golos, Arial, Helvetica, sans-serif;
   max-width: 1440px;
   margin: auto;
+<<<<<<< HEAD
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -19,4 +20,7 @@
     "content content__sidebar"
     "content content__sidebar ";
   gap: 24px;
+=======
+  color: #212329;
+>>>>>>> febe4b1 (стили для переиспользования)
 }

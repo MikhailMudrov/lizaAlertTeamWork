@@ -1,0 +1,6 @@
+.test__time {
+  background-image: url(../../../images/hourglass.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

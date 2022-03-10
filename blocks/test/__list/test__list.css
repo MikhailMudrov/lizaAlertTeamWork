@@ -1,6 +1,15 @@
 .test__list {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
+=======
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-top: 32px;
+>>>>>>> febe4b1 (стили для переиспользования)
 }
