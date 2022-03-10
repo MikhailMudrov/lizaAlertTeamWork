@@ -1,0 +1,6 @@
+.test__option_checkbox_active {
+  background-image: url(../../../../images/test_checked_checkbox.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  color: #f06000;
+}
