@@ -57,3 +57,4 @@
 @import url(../blocks/test/__answer-radio/test__answer-radio.css);
 @import url(../blocks/test/__option/_checkbox/test__option_checkbox_notactive.css);
 @import url(../blocks/test/__option/_radio/test__option_radio_notactive.css);
+@import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
