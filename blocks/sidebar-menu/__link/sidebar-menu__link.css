@@ -1,0 +1,9 @@
+.sidebar-menu__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar-menu__link:hover {
+  opacity: .6;
+  transition: opacity .3s linear;
+}

@@ -26,3 +26,23 @@
 @import url(../blocks/button/button__image/button__image.css);
 @import url(../blocks/button/button__image/_position/button__image_position_left.css);
 @import url(../blocks/button/button__image/_position/button__image_position_right.css);
+
+@import url(../blocks/sidebar-menu/sidebar-menu.css);
+@import url(../blocks/sidebar-menu/__title/sidebar-menu__title.css);
+@import url(../blocks/sidebar-menu/__stages/sidebar-menu__stages.css);
+@import url(../blocks/sidebar-menu/__progress-list/sidebar-menu__progress-list.css);
+@import url(../blocks/sidebar-menu/__progress-block/sidebar-menu__progress-block.css);
+@import url(../blocks/sidebar-menu/__link/sidebar-menu__link.css);
+@import url(../blocks/sidebar-menu/__progress-block/_active/sidebar-menu__progress-block_active.css);
+@import url(../blocks/sidebar-menu/__progress-block-head/sidebar-menu__progress-block-head.css);
+@import url(../blocks/sidebar-menu/__progress-block-text/sidebar-menu__progress-block-text.css);
+@import url(../blocks/sidebar-menu/__progress-block-toggler/sidebar-menu__progress-block-toggler.css);
+@import url(../blocks/sidebar-menu/__stages-item/sidebar-menu__stages-item.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_done.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_lesson.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_lesson-active.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_test.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_test-active.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video-active.css);
+@import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_webinar.css);
