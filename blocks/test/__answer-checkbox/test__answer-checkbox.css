@@ -1,5 +1,8 @@
 .test__answer-checkbox {
   min-width: 24px;
   min-height: 24px;
-  visibility: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }

@@ -1,5 +1,15 @@
 .test__answer-radio {
   min-width: 24px;
   min-height: 24px;
-  visibility: hidden;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url(../../../../images/test_radio.svg);
+  background-repeat: no-repeat;
 }
+
+.test__answer-radio:checked {
+  background-image: url(../../../../images/test_checked_radio.svg);
+}
+
