@@ -1,0 +1,6 @@
+.test__text {
+  padding-left: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
