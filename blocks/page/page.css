@@ -10,4 +10,13 @@
   -ms-font-feature-settings: "kern" 1;
   font-feature-settings: "kern";
   color: #212329;
+  display: grid;
+  grid-template-columns: 60% 29%;
+  grid-template-rows: 5% 2% 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "breadcrumbs breadcrumbs"
+    "content content__sidebar"
+    "content content__sidebar ";
+  gap: 24px;
 }
