@@ -3,3 +3,7 @@
   color: #FFF;
   border: 0;
 }
+
+.button_state_active:hover {
+  opacity: .8;
+}
