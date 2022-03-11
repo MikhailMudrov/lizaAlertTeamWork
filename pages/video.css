@@ -26,6 +26,7 @@
 @import url(../blocks/button/button__image/button__image.css);
 @import url(../blocks/button/button__image/_position/button__image_position_left.css);
 @import url(../blocks/button/button__image/_position/button__image_position_right.css);
+@import url(../blocks/button/__link/button__link.css);
 @import url(../blocks/button/_spaced/button_spaced.css);
 
 @import url(../blocks/player/player.css);
