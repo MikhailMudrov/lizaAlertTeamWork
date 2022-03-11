@@ -9,3 +9,19 @@
   left: 0;
   bottom: 32px;
 }
+
+@media (max-width: 1024px) {
+  .player__control-bar {
+    padding-left: 16px;
+    padding-right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .player__control-bar {
+    padding-left: 8px;
+    padding-right: 8px;
+    bottom: 8px;
+  }
+}

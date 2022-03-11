@@ -1,6 +1,13 @@
 .player__sound-level-img {
   width: 24px;
   height: 24px;
+  min-width: 24px;
   margin-right: 8px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .player__sound-level-img {
+    margin-right: 4px;
+  }
 }
