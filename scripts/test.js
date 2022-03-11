@@ -2,31 +2,35 @@ import { createSideMenuHandlers } from "./side-menu.js";
 
 createSideMenuHandlers();
 
-const checkboxChecked = document.querySelectorAll('.test__option_checkbox_notactive');
-const radioChecked = document.querySelectorAll('.test__answer-radio');
+const checkboxInputs = document.querySelectorAll('.test__answer-checkbox');
+const radioInputs = document.querySelectorAll('.test__answer-radio');
 
 
-checkboxChecked.forEach(function (checkBox) {
-
+checkboxInputs.forEach(function (checkBox) {
   checkBox.addEventListener('click', function () {
-    if (checkBox.classList.contains("test__option_checkbox_notactive")) {
-      this.classList.remove('test__option_checkbox_notactive');
-      this.classList.add('test__option_checkbox_active');
+    if (checkBox.parentNode.classList.contains("test__option_checkbox_notactive")) {
+      this.parentNode.classList.remove('test__option_checkbox_notactive');
+      this.parentNode.classList.add('test__option_checkbox_active');
     } else {
-      this.classList.remove('test__option_checkbox_active');
-      this.classList.add('test__option_checkbox_notactive');
+      this.parentNode.classList.remove('test__option_checkbox_active');
+      this.parentNode.classList.add('test__option_checkbox_notactive');
+      console.log(this);
     }
   });
 });
 
 
-radioChecked.forEach(function (radio) {
+radioInputs.forEach(function (radio) {
   radio.addEventListener('click', function () {
-    if (radio.checked) {
-      radioChecked.forEach(element => {
-        element.parentNode.style.color = '#000';
-        radio.parentNode.style.color = '#f06000';
-      });
-    };
-  });
+    radioInputs.forEach( (element) => {
+      if (element == radio) {
+        element.parentNode.classList.remove('test__option_radio_notactive');
+        element.parentNode.classList.add('test__option_radio_active');
+      }
+      else {
+        element.parentNode.classList.remove('test__option_radio_active');
+        element.parentNode.classList.add('test__option_radio_notactive');
+      }
+    } );
+});
 });
