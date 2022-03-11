@@ -28,8 +28,10 @@
   background-size: var(--tickIntervalPerc) var(--ticks-height);
   background-position-x: calc(var(--thumb-size) / 2 - var(--ticks-thickness) / 2);
   background-position-y: var(--flip-y, bottom);
-  padding-bottom: var(--flip-y, var(--ticks-gap));
-  padding-top: calc(var(--flip-y) * var(--ticks-gap));
+/*padding-bottom: var(--flip-y, var(--ticks-gap));
+  padding-top: calc(var(--flip-y) * var(--ticks-gap)); */
+  padding: 0;
+  margin-top: 2px;
   position: relative;
   z-index: 1;
 }
@@ -41,7 +43,7 @@
   margin: 0;
   position: absolute;
   left: 0;
-  top: calc(50% - Max(var(--track-height), var(--thumb-size)) / 2 + calc(var(--ticks-gap) / 2 * var(--flip-y, -1)));
+  top: calc(50% - Max(var(--track-height), var(--thumb-size)) / 2 + calc(var(--ticks-gap) / 2 * var(--flip-y, 0)));
   cursor: -webkit-grab;
   cursor: grab;
   outline: none;

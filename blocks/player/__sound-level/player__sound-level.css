@@ -1,3 +1,16 @@
 .player__sound-level {
   display: flex;
+  margin-left: 32px;
+}
+
+@media (max-width: 1024px) {
+  .player__sound-level {
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .player__sound-level {
+    margin-left: 8px;
+  }
 }
