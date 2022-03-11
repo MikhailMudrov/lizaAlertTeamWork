@@ -1,0 +1,42 @@
+.range-slider__progress {
+  --start-end: calc(var(--thumb-size) / 2);
+  --clip-end: calc(100% - (var(--cb)) * 1%);
+  --clip-start: calc(var(--ca) * 1%);
+  --clip: inset(-20px var(--clip-end) -20px var(--clip-start));
+  position: absolute;
+  left: var(--start-end);
+  right: var(--start-end);
+  top: calc(var(--ticks-gap) * var(--flip-y, 0) + var(--thumb-size) / 2 - var(--track-height) / 2);
+  height: calc(var(--track-height));
+  background: var(--progress-background, #eee);
+  pointer-events: none;
+  z-index: -1;
+  border-radius: var(--progress-radius);
+}
+
+.range-slider__progress::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-clip-path: var(--clip);
+  clip-path: var(--clip);
+  top: 0;
+  bottom: 0;
+  background: var(--fill-color, black);
+  box-shadow: var(--progress-flll-shadow);
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.range-slider__progress::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: var(--progress-shadow);
+  pointer-events: none;
+  border-radius: inherit;
+}

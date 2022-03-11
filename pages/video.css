@@ -34,11 +34,13 @@
 @import url(../blocks/player/__fullscreen-button/player__fullscreen-button.css);
 @import url(../blocks/player/__heading/player__heading.css);
 @import url(../blocks/player/__play-button/player__play-button.css);
-@import url(../blocks/player/__range-ctrl/player__range-ctrl.css);
 @import url(../blocks/player/__sound-level/player__sound-level.css);
 @import url(../blocks/player/__sound-level-img/player__sound-level-img.css);
 @import url(../blocks/player/__sound-level-ctrl/player__sound-level-ctrl.css);
 @import url(../blocks/player/__timeline-ctrl/player__timeline-ctrl.css);
+
+@import url(../blocks/range-slider/range-slider.css);
+@import url(../blocks/range-slider/__progress/range-slider__progress.css);
 
 @import url(../blocks/sidebar-menu/sidebar-menu.css);
 @import url(../blocks/sidebar-menu/__title/sidebar-menu__title.css);

@@ -1,8 +1,9 @@
 .player__container {
-  /* background-image: url(../../../images/player-plug-image.jpeg); */
-  background-position: center center;
-  background-size: cover;
   background-color: #212329;
+  background-image: url(../../../images/player-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   max-width: 808px;
   height: 456px;
   box-shadow: 0px 0px 4px rgba(233, 234, 237, 0.6), 0px 4px 16px rgba(233, 234, 237, 0.4);
