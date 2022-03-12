@@ -47,7 +47,52 @@
     </ul>
   </nav>
   <main class="content">
-    <section class="content__space" id="test">
+    <div class="preview__container" id="preview">
+      <section class="card content__design">
+        <h1 class="card__title content__title">Тест</h1>
+        <p class="content__text">Что мы узнали об особенностях привлечения следовых расчётов на ПСР и особенностях
+          взаимодействия между участниками ППС</p>
+        <ul class="test__list">
+          <li class="test__point">
+            <div class="test__image test__score"></div>
+            <div class="test__text">
+              <p class="content__text">Проходной балл:</p>
+              <p class="content__text">80%</p>
+            </div>
+          </li>
+          <li class="test__point">
+            <div class="test__image test__tries"></div>
+            <div class="test__text">
+              <p class="content__text">Количество попыток:</p>
+              <p class="content__text">3</p>
+            </div>
+          </li>
+          <li class="test__point">
+            <div class="test__image test__time"></div>
+            <div class="test__text">
+              <p class="content__text">Срок сдачи:</p>
+              <p class="content__text">22.02.2022 г. 16:20 (GMT+3)</p>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="button button_state_active button_width_regular" id="startTestBtn">Начать
+          тест</button>
+      </section>
+
+      <div class="button__outside-test">
+        <a class="button__link" href="./video.html">
+          <button type="button" class="button button_state_inactive button_width_regular">
+            <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
+            Назад
+          </button>
+        </a>
+        <button type="button" class="button button_state_disabled button_width_regular">
+          Далее
+          <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
+        </button>
+      </div>
+    </div>
+    <section class="content__space card_hide" id="test">
       <div class="card content__design">
         <div class="card__header">
           <h2 class="card__title">Тест</h2>
@@ -108,7 +153,8 @@
           <p class="result-test__text result-test_theme_red">Нажмите «Пересдать», чтобы попробовать снова.</p>
         </div>
 
-        <button type="reset" form="testForm" id="retakeBtn" class="button button_state_inactive button_width_narrow button_hidden">
+        <button type="reset" form="testForm" id="retakeBtn"
+          class="button button_state_inactive button_width_narrow button_hidden">
           <img src="./images/retake-inactive.svg" alt="Пересдать" class="button__image button__image_position_left">
           Пересдать
         </button>
@@ -117,12 +163,10 @@
           результат</button>
       </div>
       <div class="button__outside-test">
-        <a class="button__link" href="./preview.html">
-          <button type="button" class="button button_state_inactive button_width_regular">
-            <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
-            Назад
-          </button>
-        </a>
+        <button type="button" class="button button_state_inactive button_width_regular" id="backToPreviewBtn">
+          <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
+          Назад
+        </button>
         <button type="button" id="forwardBtn" class="button button_state_disabled button_width_regular">
           Далее
           <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
@@ -203,7 +247,7 @@
             </li>
           </ul>
         </li>
-        <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
+        <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
             <p class="sidebar-menu__progress-block-text">3.&nbsp;Особенности привлечения следовых расчётов
               на&nbsp;ПСР&nbsp;и&nbsp;особенности
@@ -229,7 +273,7 @@
           </ul>
         </li>
 
-        <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
+        <li class="sidebar-menu__progress-block">
           <a href="#" class="sidebar-menu__progress-block-head">
             <p class="sidebar-menu__progress-block-text">4.&nbsp;Корректная постановка задачи кинологу
               и&nbsp;особенности
