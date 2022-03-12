@@ -17,8 +17,10 @@
 @import url(../blocks/button/_state/button_state_active.css);
 @import url(../blocks/button/_state/button_state_inactive.css);
 @import url(../blocks/button/_state/button_state_disabled.css);
+@import url(../blocks/button/_width/button_width_narrow.css);
 @import url(../blocks/button/_width/button_width_regular.css);
 @import url(../blocks/button/_width/button_width_wide.css);
+@import url(../blocks/button/_hidden/button_hidden.css);
 @import url(../blocks/button/__link/button__link.css);
 @import url(../blocks/button/button__image/button__image.css);
 @import url(../blocks/button/button__image/_position/button__image_position_left.css);
@@ -64,3 +66,13 @@
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
 @import url(../blocks/content/__sidebar/content__sidebar.css);
 @import url(../blocks/button/__outside-test/button__outside-test.css);
+
+@import url(../blocks/result-test/result-test.css);
+@import url(../blocks/result-test/__text/result-test__text.css);
+@import url(../blocks/result-test/__title/result-test__title.css);
+@import url(../blocks/result-test/__subtitle/result-test__subtitle.css);
+@import url(../blocks/result-test/_type/_positive/result-test_type_positive.css);
+@import url(../blocks/result-test/_type/_negative/result-test_type_negative.css);
+@import url(../blocks/result-test/_theme/_green/result-test_theme_green.css);
+@import url(../blocks/result-test/_theme/_red/result-test_theme_red.css);
+@import url(../blocks/result-test/_hidden/result-test_hidden.css);
