@@ -49,7 +49,6 @@
 @import url(../blocks/card/__conditions/card__conditions.css);
 @import url(../blocks/card/__header/card__header.css);
 @import url(../blocks/card/__title/card__title.css);
-@import url(../blocks/card/card.css);
 @import url(../blocks/test/__answer-checkbox/test__answer-checkbox.css);
 @import url(../blocks/test/__item/test__item.css);
 @import url(../blocks/test/__list/test__list.css);
@@ -62,6 +61,9 @@
 @import url(../blocks/test/__option/_checkbox/test__option_checkbox_notactive.css);
 @import url(../blocks/test/__option/_radio/test__option_radio_notactive.css);
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
-@import url(../blocks/card/card.css);
 @import url(../blocks/content/__sidebar/content__sidebar.css);
 @import url(../blocks/button/__outside-test/button__outside-test.css);
+@import url(../blocks/test/__option/_anwer/test__option_anwer_notchecked-right.css);
+@import url(../blocks/test/__option/_anwer/test__option_anwer_notchecked-wrong.css);
+@import url(../blocks/test/__option/_anwer/test__option_anwer_right.css);
+@import url(../blocks/test/__option/_anwer/test__option_anwer_wrong.css);
