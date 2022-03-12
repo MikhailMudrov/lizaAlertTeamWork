@@ -11,8 +11,8 @@
   font-feature-settings: "kern";
   color: #212329;
   display: grid;
-  grid-template-columns: 60% 29%;
-  grid-template-rows: 5% 1% 1fr 1fr;
+  grid-template-columns: 65.5% 33.5%;
+  grid-template-rows: 5% 2% 1fr 1fr;
   grid-template-areas:
     "header header"
     "breadcrumbs breadcrumbs"
