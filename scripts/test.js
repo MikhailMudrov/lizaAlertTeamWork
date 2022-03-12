@@ -55,7 +55,6 @@ checkboxInputs.forEach(function (checkBox) {
     } else {
       this.parentNode.classList.remove('test__option_checkbox_active');
       this.parentNode.classList.add('test__option_checkbox_notactive');
-      console.log(this);
     }
 
     //Активация кнопки "Показать результат".
@@ -75,11 +74,11 @@ radioInputs.forEach(function (radio) {
         element.parentNode.classList.remove('test__option_radio_active');
         element.parentNode.classList.add('test__option_radio_notactive');
       }
-    } );
-
+    });
+  });
+  
     //Активация кнопки "Показать результат".
     changeShowResultButtonState();
-});
 });
 
 //Отображение результата теста.
