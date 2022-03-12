@@ -121,3 +121,38 @@ showResultButton.addEventListener('click', function () {
     }
   }
 });
+
+//константы для показа/скрытия карточки
+const testBlock = document.querySelector('#test');
+const aboutBlock = document.querySelector('#about');
+const aboutButton = document.querySelector('#aboutBtn');
+const returnButton = document.querySelector('#returnBtn');
+const returnBottomButton = document.querySelector('#returnBottomBtn')
+
+//функция скрытия блока
+function showBlock(blockId) {
+  blockId.classList.remove('card_hide');
+};
+
+//Функция добавления блока
+function hideBlock(blockId) {
+  blockId.classList.add('card_hide');
+};
+
+//поменять карточку теста на катрочку о тесте
+aboutButton.addEventListener('click', function () {
+  showBlock(aboutBlock);
+  hideBlock(testBlock);
+});
+//вернуть карточку теста
+returnButton.addEventListener('click', function () {
+  showBlock(testBlock);
+  hideBlock(aboutBlock);
+});
+
+returnBottomButton.addEventListener('click', function () {
+  showBlock(testBlock);
+  hideBlock(aboutBlock);
+});
+
+

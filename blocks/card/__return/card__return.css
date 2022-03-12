@@ -9,4 +9,9 @@
   display: flex;
   align-items: center;
   text-align: center;
+  padding: 0;
+}
+
+.card__return:hover {
+  border-bottom: 1px solid black;
 }
