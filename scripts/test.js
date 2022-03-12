@@ -24,7 +24,7 @@ function changeShowResultButtonState() {
   const checkboxChosen = document.querySelectorAll('.test__option_checkbox_active');
   const radioChosen = document.querySelectorAll('.test__option_radio_active');
 
- if (checkboxChosen.length && radioChosen.length) {
+  if (checkboxChosen.length && radioChosen.length) {
     showResultButton.classList.remove('button_state_disabled');
     showResultButton.classList.add('button_state_active');
   } else {
@@ -46,10 +46,6 @@ function getTestResult() {
   return firstQuestionResult && secondQuestionResult;
 }
 
-//Функция
-function styleTestAnswers() {
-
-}
 
 
 checkboxInputs.forEach(function (checkBox) {
@@ -60,6 +56,7 @@ checkboxInputs.forEach(function (checkBox) {
     } else {
       this.parentNode.classList.remove('test__option_checkbox_active');
       this.parentNode.classList.add('test__option_checkbox_notactive');
+      console.log(this);
     }
 
     //Активация кнопки "Показать результат".
@@ -70,7 +67,7 @@ checkboxInputs.forEach(function (checkBox) {
 
 radioInputs.forEach(function (radio) {
   radio.addEventListener('click', function () {
-    radioInputs.forEach( (element) => {
+    radioInputs.forEach((element) => {
       if (element == radio) {
         element.parentNode.classList.remove('test__option_radio_notactive');
         element.parentNode.classList.add('test__option_radio_active');
@@ -80,10 +77,10 @@ radioInputs.forEach(function (radio) {
         element.parentNode.classList.add('test__option_radio_notactive');
       }
     });
-  });
-  
+
     //Активация кнопки "Показать результат".
     changeShowResultButtonState();
+  });
 });
 
 //Отображение результата теста.
@@ -94,8 +91,6 @@ showResultButton.addEventListener('click', function () {
   //Получаем результат теста.
   const testResult = getTestResult();
 
-  //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
-  styleTestAnswers();
 
   //Меняем отображение кнопок "Показать результат" и "Пересдать".
   showResultButton.classList.add('button_hidden');
@@ -126,4 +121,3 @@ showResultButton.addEventListener('click', function () {
     }
   }
 });
-
