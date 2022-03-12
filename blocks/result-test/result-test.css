@@ -2,8 +2,7 @@
   max-width: 808px;
   box-sizing: border-box;
   border-radius: 16px;
-  margin: 16px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 16px;
 }
