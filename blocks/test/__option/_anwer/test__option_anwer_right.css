@@ -1,0 +1,7 @@
+.test__option_anwer_right {
+  background-image: url(../../../../images/success.svg);
+  background-repeat: no-repeat;
+  color: #008000;
+  cursor: default;
+  background-position: left center;
+}
