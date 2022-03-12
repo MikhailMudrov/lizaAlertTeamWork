@@ -47,7 +47,7 @@ function getTestResult() {
 }
 
 //Функция меняет стили для пунктов теста при отображении результата.
-function styleTestOption (numberOfOption, collection, optionActiveClassName, optionNotActiveClassName) {
+function styleTestOption(numberOfOption, collection, optionActiveClassName, optionNotActiveClassName) {
   collection.forEach((item, index) => {
     const rightAnswer = rightAnswers[numberOfOption][index];
 
@@ -173,7 +173,7 @@ showResultButton.addEventListener('click', function () {
 //результатов прохождения теста.
 function removeClassesFromTestOption(collection, classToInactivate) {
   const classesToRemove = ['test__option_answer_notchecked-right', 'test__option_answer_notchecked-wrong',
-  'test__option_answer_right', 'test__option_answer_wrong'];
+    'test__option_answer_right', 'test__option_answer_wrong'];
 
   collection.forEach((item) => {
     classesToRemove.forEach((classItem) => {
@@ -214,9 +214,12 @@ retakeButton.addEventListener('click', function () {
 });
 
 //константы для показа/скрытия карточки
+const previewBlock = document.querySelector('#preview')
 const testBlock = document.querySelector('#test');
 const aboutBlock = document.querySelector('#about');
+const startTestButton = document.querySelector('#startTestBtn')
 const aboutButton = document.querySelector('#aboutBtn');
+const backToPreviewButton = document.querySelector('#backToPreviewBtn')
 const returnButton = document.querySelector('#returnBtn');
 const returnBottomButton = document.querySelector('#returnBottomBtn')
 
@@ -230,6 +233,16 @@ function hideBlock(blockId) {
   blockId.classList.add('card_hide');
 };
 
+// поменять карточку превью на карточку теста
+startTestButton.addEventListener('click', function () {
+  showBlock(testBlock);
+  hideBlock(previewBlock);
+});
+//вернуть карточку превью
+backToPreviewButton.addEventListener('click', function () {
+  showBlock(previewBlock);
+  hideBlock(testBlock);
+});
 //поменять карточку теста на катрочку о тесте
 aboutButton.addEventListener('click', function () {
   showBlock(aboutBlock);
