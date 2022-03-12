@@ -54,6 +54,7 @@
 @import url(../blocks/card/__return/card__return.css);
 @import url(../blocks/card/_hide/card_hide.css);
 @import url(../blocks/form/form.css);
+
 @import url(../blocks/test/__answer-checkbox/test__answer-checkbox.css);
 @import url(../blocks/test/__item/test__item.css);
 @import url(../blocks/test/__point/test__point.css);
@@ -75,6 +76,11 @@
 @import url(../blocks/test/__option/_checkbox/test__option_checkbox_notactive.css);
 @import url(../blocks/test/__option/_radio/test__option_radio_notactive.css);
 @import url(../blocks/test/__option/_radio/test__option_radio_active.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_notchecked-right.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_notchecked-wrong.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_right.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_wrong.css);
+
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
 @import url(../blocks/content/__sidebar/content__sidebar.css);
 @import url(../blocks/button/__outside-test/button__outside-test.css);
