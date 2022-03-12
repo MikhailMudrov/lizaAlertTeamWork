@@ -14,7 +14,7 @@ const forwardButton = document.querySelector('#forwardBtn');
 const resultTestPositive = document.querySelector('.result-test_type_positive');
 const resultTestNegative = document.querySelector('.result-test_type_negative');
 
-const correctAnswers = {
+const rightAnswers = {
   1: [true, true, true],
   2: [false, true, false]
 };
@@ -46,6 +46,44 @@ function getTestResult() {
   return firstQuestionResult && secondQuestionResult;
 }
 
+//Функция меняет стили для пунктов теста при отображении результата.
+function styleTestOption (numberOfOption, collection, optionActiveClassName, optionNotActiveClassName) {
+  collection.forEach((item, index) => {
+    const rightAnswer = rightAnswers[numberOfOption][index];
+
+    //Пункт выбран пользователем...
+    if (item.classList.contains(optionActiveClassName)) {
+      item.classList.remove(optionActiveClassName);
+
+      if (rightAnswer) { //...и это верный ответ.
+        item.classList.add('test__option_answer_right');
+      } else { //...и это неверный ответ.
+        item.classList.add('test__option_answer_wrong');
+      }
+    } else {
+      //Пункт не выбран пользователем...
+      item.classList.remove(optionNotActiveClassName);
+
+      if (rightAnswer) { //...и это верный ответ.
+        item.classList.add('test__option_answer_notchecked-right');
+      } else { //...и это неверный ответ.
+        item.classList.add('test__option_answer_notchecked-wrong');
+      }
+    }
+  });
+}
+
+//Функция применяет соответствующие стили к ответам на вопросы теста с учетом корректных данных и выбора пользователя.
+function styleTestAnswers() {
+  const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
+  const radioInputsCollection = document.querySelectorAll('.test__radio');
+
+  //Ответы на 1-й вопрос.
+  styleTestOption(1, checkboxInputsCollection, 'test__option_checkbox_active', 'test__option_checkbox_notactive');
+
+  //Ответы на 2-й вопрос.
+  styleTestOption(2, radioInputsCollection, 'test__option_radio_active', 'test__option_radio_notactive');
+}
 
 
 checkboxInputs.forEach(function (checkBox) {
@@ -85,12 +123,16 @@ radioInputs.forEach(function (radio) {
 
 //Отображение результата теста.
 showResultButton.addEventListener('click', function () {
+  if (this.classList.contains('button_state_disabled')) return;
+
   //Увеличиваем счетчик количества попыток сдачи.
   numberOfAttemts++;
 
   //Получаем результат теста.
   const testResult = getTestResult();
 
+  //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
+  styleTestAnswers();
 
   //Меняем отображение кнопок "Показать результат" и "Пересдать".
   showResultButton.classList.add('button_hidden');
@@ -104,6 +146,11 @@ showResultButton.addEventListener('click', function () {
     forwardButton.classList.remove('button_state_disabled');
     forwardButton.classList.add('button_state_active');
     forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
+
+    //Делаем неактивной (но доступной) кнопку "Пересдать".
+    retakeButton.classList.remove('button_state_active');
+    retakeButton.classList.add('button_state_inactive');
+    retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg');
   } else {
     //Отображаем карточку с негативным результатом теста.
     resultTestNegative.classList.remove('result-test_hidden');
@@ -120,4 +167,49 @@ showResultButton.addEventListener('click', function () {
       forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
     }
   }
+});
+
+
+//Функция удаляет из всех элементов вопроса теста все классы, отвечающие за стили, примененные при отображении
+//результатов прохождения теста.
+function removeClassesFromTestOption(collection, classToInactivate) {
+  const classesToRemove = ['test__option_answer_notchecked-right', 'test__option_answer_notchecked-wrong',
+  'test__option_answer_right', 'test__option_answer_wrong'];
+
+  collection.forEach((item) => {
+    classesToRemove.forEach((classItem) => {
+      if (item.classList.contains(classItem)) {
+        item.classList.remove(classItem);
+      }
+    });
+
+    item.classList.add(classToInactivate);
+  });
+}
+
+
+//Пересдача теста. Очищаем поля формы и настраиваем видимость элементов.
+retakeButton.addEventListener('click', function () {
+  //Очищаем поля формы.
+  const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
+  const radioInputsCollection = document.querySelectorAll('.test__radio');
+
+  removeClassesFromTestOption(checkboxInputsCollection, 'test__option_checkbox_notactive');
+  removeClassesFromTestOption(radioInputsCollection, 'test__option_radio_notactive');
+
+  //Скрываем видимость карточек с результатом теста.
+  if (!resultTestPositive.classList.contains('result-test_hidden')) {
+    resultTestPositive.classList.add('result-test_hidden');
+  }
+
+  if (!resultTestNegative.classList.contains('result-test_hidden')) {
+    resultTestNegative.classList.add('result-test_hidden');
+  }
+
+  //Скрываем кнопку "Пересдать" и отображаем кнопку "Показать результат".
+  retakeButton.classList.add('button_hidden');
+
+  showResultButton.classList.remove('button_hidden');
+  showResultButton.classList.remove('button_state_active');
+  showResultButton.classList.add('button_state_disabled');
 });

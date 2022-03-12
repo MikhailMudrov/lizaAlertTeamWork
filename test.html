@@ -53,7 +53,7 @@
           <h2 class="card__title">Тест</h2>
           <button class="card__conditions">Посмотреть условия</button>
         </div>
-        <form class="test__form">
+        <form class="test__form" id="testForm">
           <ol class="test__list">
             <li class="test__item">
               <h3 class="test__question">В каких случаях перспективно применение следовых кинологических расчётов?</h3>
@@ -107,7 +107,7 @@
           <p class="result-test__text result-test_theme_red">Нажмите «Пересдать», чтобы попробовать снова.</p>
         </div>
 
-        <button type="button" id="retakeBtn" class="button button_state_inactive button_width_narrow button_hidden">
+        <button type="reset" form="testForm" id="retakeBtn" class="button button_state_inactive button_width_narrow button_hidden">
           <img src="./images/retake-inactive.svg" alt="Пересдать" class="button__image button__image_position_left">
           Пересдать
         </button>
