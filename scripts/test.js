@@ -46,6 +46,11 @@ function getTestResult() {
   return firstQuestionResult && secondQuestionResult;
 }
 
+//Функция
+function styleTestAnswers() {
+
+}
+
 
 checkboxInputs.forEach(function (checkBox) {
   checkBox.addEventListener('click', function () {
@@ -85,11 +90,14 @@ radioInputs.forEach(function (radio) {
 showResultButton.addEventListener('click', function () {
   //Увеличиваем счетчик количества попыток сдачи.
   numberOfAttemts++;
-  /* console.log(numberOfAttemts); */
 
-  //Получим результат теста.
+  //Получаем результат теста.
   const testResult = getTestResult();
 
+  //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
+  styleTestAnswers();
+
+  //Меняем отображение кнопок "Показать результат" и "Пересдать".
   showResultButton.classList.add('button_hidden');
   retakeButton.classList.remove('button_hidden');
 
