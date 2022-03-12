@@ -14,7 +14,6 @@ checkboxInputs.forEach(function (checkBox) {
     } else {
       this.parentNode.classList.remove('test__option_checkbox_active');
       this.parentNode.classList.add('test__option_checkbox_notactive');
-      console.log(this);
     }
   });
 });
@@ -32,5 +31,5 @@ radioInputs.forEach(function (radio) {
         element.parentNode.classList.add('test__option_radio_notactive');
       }
     } );
-});
+  });
 });
