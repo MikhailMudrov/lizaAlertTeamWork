@@ -121,55 +121,6 @@ radioInputs.forEach(function (radio) {
   });
 });
 
-/* //Отображение результата теста - кнопка "Показать результат".
-showResultButton.addEventListener('click', function () {
-  if (this.classList.contains('button_state_disabled')) return;
-
-  //Увеличиваем счетчик количества попыток сдачи.
-  numberOfAttemts++;
-
-  //Получаем результат теста.
-  const testResult = getTestResult();
-
-  //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
-  styleTestAnswers();
-
-  //Меняем отображение кнопок "Показать результат" и "Пересдать".
-  showResultButton.classList.add('button_hidden');
-  retakeButton.classList.remove('button_hidden');
-
-  if (testResult) {
-    //Отображаем карточку с позитивным результатом теста.
-    resultTestPositive.classList.remove('result-test_hidden');
-
-    //Активизируем кнопку "Далее" и настраиваем ссылку для перехода на другую страницу.
-    forwardButton.classList.remove('button_state_disabled');
-    forwardButton.classList.add('button_state_active');
-    forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
-    forwardButton.closest('.button__link').setAttribute('href', './positive-final.html');
-
-    //Делаем неактивной (но доступной) кнопку "Пересдать".
-    retakeButton.classList.remove('button_state_active');
-    retakeButton.classList.add('button_state_inactive');
-    retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg');
-  } else {
-    //Отображаем карточку с негативным результатом теста.
-    resultTestNegative.classList.remove('result-test_hidden');
-
-    //Активизируем кнопку "Пересдать".
-    retakeButton.classList.remove('button_state_inactive');
-    retakeButton.classList.add('button_state_active');
-    retakeButton.querySelector('img').setAttribute('src', './images/retake-active.svg');
-
-    //Если пользователь трижды провалил тест - активизируем кнопку "Далее" и настраиваем ссылку для перехода на другую страницу.
-    if (numberOfAttemts >= 3) {
-      forwardButton.classList.remove('button_state_disabled');
-      forwardButton.classList.add('button_state_active');
-      forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
-      forwardButton.closest('.button__link').setAttribute('href', './negative-final.html');
-    }
-  }
-}); */
 
 //Функция удаляет из всех элементов вопроса теста все классы, отвечающие за стили, примененные при отображении
 //результатов прохождения теста.
@@ -212,13 +163,21 @@ function initializeTestState() {
   showResultButton.classList.remove('button_hidden');
   showResultButton.classList.remove('button_state_active');
   showResultButton.classList.add('button_state_disabled');
+
+  //Удаляем обработчик с кнопки "Далее".
+
 }
 
 
 //Пересдача теста. Очищаем поля формы и настраиваем видимость элементов.
-retakeButton.addEventListener('click', function () {
+function retakeButtonInitialHandler() {
   initializeTestState();
-});
+}
+
+retakeButton.addEventListener('click', retakeButtonInitialHandler);
+
+
+
 
 //константы для показа/скрытия карточки
 const previewBlock = document.querySelector('#preview')
@@ -229,6 +188,15 @@ const aboutButton = document.querySelector('#aboutBtn');
 const backToPreviewButton = document.querySelector('#backToPreviewBtn')
 const returnButton = document.querySelector('#returnBtn');
 const returnBottomButton = document.querySelector('#returnBottomBtn')
+
+//Обработчики для кнопки "Далее".
+function forwardButtonGoToPositiveHandler() {
+  document.location.href = './positive-final.html';
+}
+
+function forwardButtonGoToNegativeHandler() {
+  document.location.href = './negative-final.html';
+}
 
 //функция скрытия блока
 function showBlock(blockId) {
@@ -301,16 +269,23 @@ showResultButton.addEventListener('click', function () {
     //Отображаем карточку с позитивным результатом теста.
     resultTestPositive.classList.remove('result-test_hidden');
 
-    //Активизируем кнопку "Далее" и настраиваем ссылку для перехода на другую страницу.
+    //Активизируем кнопку "Далее" и настраиваем обработчик для перехода на другую страницу.
     forwardButton.classList.remove('button_state_disabled');
     forwardButton.classList.add('button_state_active');
     forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
-    forwardButton.closest('.button__link').setAttribute('href', './positive-final.html');
+    forwardButton.addEventListener('click', forwardButtonGoToPositiveHandler);
 
-    //Делаем неактивной (но доступной) кнопку "Пересдать".
+/*     //Делаем неактивной (но доступной) кнопку "Пересдать".
     retakeButton.classList.remove('button_state_active');
     retakeButton.classList.add('button_state_inactive');
-    retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg');
+    retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg'); */
+
+    //Деактивизируем кнопку "Пересдать".
+    retakeButton.classList.remove('button_state_inactive');
+    retakeButton.classList.remove('button_state_active');
+    retakeButton.classList.add('button_state_disabled');
+    retakeButton.querySelector('img').setAttribute('src', './images/retake-disabled.svg');
+    retakeButton.removeEventListener('click', retakeButtonInitialHandler);
   } else {
     //Отображаем карточку с негативным результатом теста.
     resultTestNegative.classList.remove('result-test_hidden');
@@ -320,12 +295,20 @@ showResultButton.addEventListener('click', function () {
     retakeButton.classList.add('button_state_active');
     retakeButton.querySelector('img').setAttribute('src', './images/retake-active.svg');
 
-    //Если пользователь трижды провалил тест - активизируем кнопку "Далее" и настраиваем ссылку для перехода на другую страницу.
+    //Если пользователь трижды провалил тест - активизируем кнопку "Далее" и настраиваем обработчик для перехода на другую страницу.
+    //Также - деактивируем кнопку "Пересдать".
     if (numberOfAttemts >= 3) {
       forwardButton.classList.remove('button_state_disabled');
       forwardButton.classList.add('button_state_active');
       forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
-      forwardButton.closest('.button__link').setAttribute('href', './negative-final.html');
+      forwardButton.addEventListener('click', forwardButtonGoToNegativeHandler);
+
+      //Деактивизируем кнопку "Пересдать".
+      retakeButton.classList.remove('button_state_inactive');
+      retakeButton.classList.remove('button_state_active');
+      retakeButton.classList.add('button_state_disabled');
+      retakeButton.querySelector('img').setAttribute('src', './images/retake-disabled.svg');
+      retakeButton.removeEventListener('click', retakeButtonInitialHandler);
     }
   }
 });
