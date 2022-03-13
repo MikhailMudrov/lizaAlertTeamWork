@@ -64,7 +64,7 @@
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
 @import url(../blocks/content/__sidebar/content__sidebar.css);
 @import url(../blocks/button/__outside-test/button__outside-test.css);
-@import url(../blocks/test/__option/_anwer/test__option_anwer_notchecked-right.css);
-@import url(../blocks/test/__option/_anwer/test__option_anwer_notchecked-wrong.css);
-@import url(../blocks/test/__option/_anwer/test__option_anwer_right.css);
-@import url(../blocks/test/__option/_anwer/test__option_anwer_wrong.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_notchecked-right.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_notchecked-wrong.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_right.css);
+@import url(../blocks/test/__option/_answer/test__option_answer_wrong.css);

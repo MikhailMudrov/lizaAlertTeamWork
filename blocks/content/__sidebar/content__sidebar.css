@@ -1,3 +1,4 @@
 .content__sidebar {
   grid-area: content__sidebar;
+  padding-right: 60px;
 }
