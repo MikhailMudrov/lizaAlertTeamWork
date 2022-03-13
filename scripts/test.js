@@ -51,6 +51,11 @@ function styleTestOption(numberOfOption, collection, optionActiveClassName, opti
   collection.forEach((item, index) => {
     const rightAnswer = rightAnswers[numberOfOption][index];
 
+    /* console.log(typeof [1, 2]); */
+    /* if (typeof collection === '') {
+
+    } */
+
     //Пункт выбран пользователем...
     if (item.classList.contains(optionActiveClassName)) {
       item.classList.remove(optionActiveClassName);
@@ -74,9 +79,11 @@ function styleTestOption(numberOfOption, collection, optionActiveClassName, opti
 }
 
 //Функция применяет соответствующие стили к ответам на вопросы теста с учетом корректных данных и выбора пользователя.
-function styleTestAnswers() {
-  const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
-  const radioInputsCollection = document.querySelectorAll('.test__radio');
+function styleTestAnswers(renderByDataFromSessionStorage) {
+  const checkboxInputsCollection = renderByDataFromSessionStorage ? sessionStorage.getItem('checkboxInputsCollection') :
+    document.querySelectorAll('.test__checkbox');
+  const radioInputsCollection = renderByDataFromSessionStorage ? sessionStorage.getItem('radioInputsCollection') :
+    document.querySelectorAll('.test__radio');
 
   //Ответы на 1-й вопрос.
   styleTestOption(1, checkboxInputsCollection, 'test__option_checkbox_active', 'test__option_checkbox_notactive');
@@ -244,18 +251,14 @@ returnBottomButton.addEventListener('click', function () {
   hideBlock(aboutBlock);
 });
 
-//Отображение результата теста - кнопка "Показать результат".
-showResultButton.addEventListener('click', function () {
-  if (this.classList.contains('button_state_disabled')) return;
-
-  //Увеличиваем счетчик количества попыток сдачи.
-  numberOfAttemts++;
-
+//Функция анализирует данные локального хранилища sessionStorage и отрисовывает элементы страницы
+//в соответствии с сохраненными данными, либо в соответствии с текущим выбором пользователя.
+function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
   //Получаем результат теста.
-  const testResult = getTestResult();
+  const testResult = renderByDataFromSessionStorage ? sessionStorage.getItem('testResult') : getTestResult();
 
   //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
-  styleTestAnswers();
+  styleTestAnswers(renderByDataFromSessionStorage);
 
   //Меняем отображение кнопок "Показать результат" и "Пересдать".
   showResultButton.classList.add('button_hidden');
@@ -275,10 +278,10 @@ showResultButton.addEventListener('click', function () {
     forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
     forwardButton.addEventListener('click', forwardButtonGoToPositiveHandler);
 
-/*     //Делаем неактивной (но доступной) кнопку "Пересдать".
-    retakeButton.classList.remove('button_state_active');
-    retakeButton.classList.add('button_state_inactive');
-    retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg'); */
+    /*     //Делаем неактивной (но доступной) кнопку "Пересдать".
+        retakeButton.classList.remove('button_state_active');
+        retakeButton.classList.add('button_state_inactive');
+        retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg'); */
 
     //Деактивизируем кнопку "Пересдать".
     retakeButton.classList.remove('button_state_inactive');
@@ -315,7 +318,18 @@ showResultButton.addEventListener('click', function () {
   //После отображения результата - сохраняем эти данные в sessionStorage.
   //Это необходимо, если пользователь вернется назад на страницу "Тест" со страницы "Курс завершен".
   saveTestResultLocal();
-})
+}
+
+//Отображение результата теста - кнопка "Показать результат".
+showResultButton.addEventListener('click', function () {
+  //Защита от срабатывания клика по недоступной кнопке.
+  if (this.classList.contains('button_state_disabled')) return;
+
+  //Увеличиваем счетчик количества попыток сдачи.
+  numberOfAttemts++;
+
+  renderTestResult(false, numberOfAttemts);
+});
 
 
 //Функция сохраняет данные о прохождении теста локально - в sessionStorage.
