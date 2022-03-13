@@ -4,6 +4,10 @@
   line-height: 24px;
   text-align: center;
   margin: 0 auto;
+  padding: 8px 75px 24px;
   max-width: 680px;
+}
+
+.result-test__text:last-child {
   padding-bottom: 24px;
 }
