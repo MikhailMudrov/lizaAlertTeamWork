@@ -311,4 +311,17 @@ showResultButton.addEventListener('click', function () {
       retakeButton.removeEventListener('click', retakeButtonInitialHandler);
     }
   }
-});
+
+  //После отображения результата - сохраняем эти данные в sessionStorage.
+  //Это необходимо, если пользователь вернется назад на страницу "Тест" со страницы "Курс завершен".
+  saveTestResultLocal();
+})
+
+
+//Функция сохраняет данные о прохождении теста локально - в sessionStorage.
+//Это необходимо, если пользователь вернется назад на страницу "Тест" со страницы
+//"Курс завершен" (positive-final.html или negative-final.html).
+function saveTestResultLocal(testResult) {
+  //Сбрасываем в false флаг 'showLastTestResult'.
+  sessionStorage.setItem('showLastTestResult', false);
+}
