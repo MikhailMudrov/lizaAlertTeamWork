@@ -1,7 +1,7 @@
 .button_state_inactive {
-  background-color: #FFF;
-  color: #F60;
-  border: 1.2px solid #E6E7EB;
+  background-color: #fff;
+  color: #f60;
+  border: 1.2px solid #e6e7eb;
 }
 
 .button_state_inactive:hover {

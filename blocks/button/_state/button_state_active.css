@@ -1,9 +1,9 @@
 .button_state_active {
-  background-color: #F60;
-  color: #FFF;
+  background-color: #f60;
+  color: #fff;
   border: 0;
 }
 
 .button_state_active:hover {
-  opacity: .8;
+  opacity: 0.8;
 }

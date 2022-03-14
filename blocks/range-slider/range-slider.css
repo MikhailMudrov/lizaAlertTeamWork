@@ -12,11 +12,8 @@
   --thumb-color: white;
   --ticks-thickness: 1px;
   --ticks-height: 5px;
-  --ticks-gap: var(--ticks-height,
-      0);
-  --value-a: Clamp(var(--min),
-      var(--value, 0),
-      var(--max));
+  --ticks-gap: var(--ticks-height, 0);
+  --value-a: Clamp(var(--min), var(--value, 0), var(--max));
   --value-b: var(--value, 0);
   --completed-a: calc((var(--value-a) - var(--min)) / (var(--max) - var(--min)) * 100);
   --completed-b: calc((var(--value-b) - var(--min)) / (var(--max) - var(--min)) * 100);
@@ -28,7 +25,7 @@
   background-size: var(--tickIntervalPerc) var(--ticks-height);
   background-position-x: calc(var(--thumb-size) / 2 - var(--ticks-thickness) / 2);
   background-position-y: var(--flip-y, bottom);
-/*padding-bottom: var(--flip-y, var(--ticks-gap));
+  /*padding-bottom: var(--flip-y, var(--ticks-gap));
   padding-top: calc(var(--flip-y) * var(--ticks-gap)); */
   padding: 0;
   margin-top: 2px;
@@ -36,7 +33,7 @@
   z-index: 1;
 }
 
-.range-slider>input {
+.range-slider > input {
   -webkit-appearance: none;
   width: 100%;
   height: var(--thumb-size);
@@ -50,7 +47,7 @@
   background: none;
 }
 
-.range-slider>input::-webkit-slider-thumb {
+.range-slider > input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: var(--thumb-size);
@@ -65,7 +62,7 @@
   transition: 0.1s;
 }
 
-.range-slider>input::-moz-range-thumb {
+.range-slider > input::-moz-range-thumb {
   -moz-appearance: none;
   appearance: none;
   height: var(--thumb-size);
@@ -80,7 +77,7 @@
   transition: 0.1s;
 }
 
-.range-slider>input::-ms-thumb {
+.range-slider > input::-ms-thumb {
   appearance: none;
   height: var(--thumb-size);
   width: var(--thumb-size);
@@ -94,6 +91,6 @@
   transition: 0.1s;
 }
 
-.range-slider>input:only-of-type~.range-slider__progress {
+.range-slider > input:only-of-type ~ .range-slider__progress {
   --clip-start: 0;
 }

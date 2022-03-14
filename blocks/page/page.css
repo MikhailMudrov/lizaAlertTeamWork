@@ -26,10 +26,9 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
     grid-template-areas:
-    "header"
-    "breadcrumbs"
-    "content"
-    "content__sidebar";
+      "header"
+      "breadcrumbs"
+      "content"
+      "content__sidebar";
   }
 }
-

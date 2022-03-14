@@ -4,10 +4,8 @@
   margin: 0 auto;
 }
 
-
 @media screen and (max-width: 1439px) {
   .result-test_theme_green {
     white-space: normal;
   }
 }
-
