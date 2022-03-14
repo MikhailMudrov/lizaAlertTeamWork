@@ -7,3 +7,16 @@
   grid-template-rows: 48px;
   grid-template-columns: 184px 184px;
 }
+
+@media screen and (max-width: 860px) {
+  .button__outside-test {
+    padding: 12px 19px;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .button__outside-test {
+    padding: 9px 0;
+    grid-template-columns: 140px 140px;
+  }
+}

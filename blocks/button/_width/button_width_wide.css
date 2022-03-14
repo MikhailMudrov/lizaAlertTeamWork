@@ -2,3 +2,9 @@
   width: 224px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 450px) {
+  .button_width_wide {
+    width: 135px;
+  }
+}
