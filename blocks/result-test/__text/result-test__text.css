@@ -11,3 +11,11 @@
 .result-test__text:last-child {
   padding-bottom: 24px;
 }
+
+@media screen and (max-width: 1039px) {
+  .result-test__text {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 8px 30px 12px;
+  }
+}

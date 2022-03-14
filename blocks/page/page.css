@@ -18,5 +18,18 @@
     "breadcrumbs breadcrumbs"
     "content content__sidebar"
     "content content__sidebar ";
-  gap: 24px;
+  row-gap: 24px;
 }
+
+@media screen and (max-width: 1039px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-areas:
+    "header"
+    "breadcrumbs"
+    "content"
+    "content__sidebar";
+  }
+}
+

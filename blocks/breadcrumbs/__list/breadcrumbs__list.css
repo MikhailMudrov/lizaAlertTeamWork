@@ -10,3 +10,10 @@
     content: "\00a0\276F\00a0";
 
   }
+
+  @media screen and (max-width: 860px) {
+    .breadcrumbs__list {
+      padding-left: 19px;
+      padding-right: 19px;
+    }
+  }

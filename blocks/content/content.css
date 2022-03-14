@@ -2,3 +2,16 @@
   grid-area: content;
   padding-left: 60px;
 }
+
+@media screen and (max-width: 1039px) {
+  .content {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .content {
+    padding: 0;
+  }
+}

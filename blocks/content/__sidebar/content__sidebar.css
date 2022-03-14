@@ -1,4 +1,18 @@
 .content__sidebar {
   grid-area: content__sidebar;
   padding-right: 60px;
+  padding-left: 24px;
+}
+
+@media screen and (max-width: 1039px) {
+  .content__sidebar {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .content__sidebar {
+    padding: 0;
+  }
 }

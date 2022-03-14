@@ -2,3 +2,9 @@
   width: 176px;
   margin: 32px auto 0;
 }
+
+@media screen and (max-width: 450px) {
+  .button_width_narrow {
+    width: 135px;
+  }
+}

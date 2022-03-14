@@ -6,3 +6,9 @@
   align-items: flex-start;
   max-width: 424px;
 }
+
+@media screen and (max-width: 1039px) {
+  .sidebar-menu {
+    max-width: 872px;
+  }
+}
