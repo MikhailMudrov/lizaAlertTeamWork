@@ -12,3 +12,9 @@
   margin-top: 32px;
   position: relative;
 }
+
+@media screen and (max-width: 1039px) {
+  .player__container {
+    height: calc(0.525 * 100vw)
+  }
+}
