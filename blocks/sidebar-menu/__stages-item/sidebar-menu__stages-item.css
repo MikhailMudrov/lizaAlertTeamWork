@@ -9,6 +9,8 @@
   font-size: 18px;
   line-height: 24px;
   color: #212329;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .sidebar-menu__stages-item:last-child {
