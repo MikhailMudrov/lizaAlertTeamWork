@@ -2,7 +2,10 @@ import { createSideMenuHandlers } from "./side-menu.js";
 
 createSideMenuHandlers();
 
-let numberOfAttemts = 0;
+let numberOfAttempts = 0;
+let successfulAttemptFixed = false;
+
+const attemptsLimitCount = 3;
 
 const checkboxInputs = document.querySelectorAll('.test__answer-checkbox');
 const radioInputs = document.querySelectorAll('.test__answer-radio');
@@ -10,6 +13,7 @@ const radioInputs = document.querySelectorAll('.test__answer-radio');
 const showResultButton = document.querySelector('#showResultBtn');
 const retakeButton = document.querySelector('#retakeBtn');
 const forwardButton = document.querySelector('#forwardBtn');
+const goToVideoButton = document.querySelector('#goToVideo');
 
 const resultTestPositive = document.querySelector('.result-test_type_positive');
 const resultTestNegative = document.querySelector('.result-test_type_negative');
@@ -18,6 +22,14 @@ const rightAnswers = {
   1: [true, true, true],
   2: [false, true, false]
 };
+
+
+function goToVideoButtonHandler() {
+  document.location.href = './video.html';
+}
+
+goToVideoButton.addEventListener('click', goToVideoButtonHandler);
+
 
 function changeShowResultButtonState() {
   //Если выбрано хотя бы по одному ответу каждом вопросе - кнопка становится активной.
@@ -47,7 +59,8 @@ function getTestResult() {
 }
 
 //Функция меняет стили для пунктов теста при отображении результата.
-function styleTestOption(numberOfOption, userAnswersCollection, testOptionsCollection, optionActiveClassName, optionNotActiveClassName, renderByDataFromSessionStorage) {
+function styleTestOption(numberOfOption, userAnswersCollection, testOptionsCollection, optionActiveClassName,
+  optionNotActiveClassName, renderByDataFromSessionStorage, needToReplaceAnswersInStorage) {
   const arrForSaveToStorage = [];
 
   testOptionsCollection.forEach((item, index) => {
@@ -84,12 +97,14 @@ function styleTestOption(numberOfOption, userAnswersCollection, testOptionsColle
 
   //Если мы стилизуем не на основании данных из хранилища, - тогда надо перезаписать эти данные текущим выбором пользователя.
   if (!renderByDataFromSessionStorage) {
-    sessionStorage.setItem(numberOfOption, arrForSaveToStorage);
+     if (!successfulAttemptFixed || (successfulAttemptFixed && needToReplaceAnswersInStorage)) {
+      sessionStorage.setItem(numberOfOption, arrForSaveToStorage);
+    }
   }
 }
 
 //Функция применяет соответствующие стили к ответам на вопросы теста с учетом корректных данных и выбора пользователя.
-function styleTestAnswers(renderByDataFromSessionStorage) {
+function styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersInStorage) {
   const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
   const radioInputsCollection = document.querySelectorAll('.test__radio');
 
@@ -101,11 +116,11 @@ function styleTestAnswers(renderByDataFromSessionStorage) {
 
   //Ответы на 1-й вопрос.
   styleTestOption(1, userAnswersCollection1, checkboxInputsCollection, 'test__option_checkbox_active',
-    'test__option_checkbox_notactive', renderByDataFromSessionStorage);
+    'test__option_checkbox_notactive', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 
   //Ответы на 2-й вопрос.
   styleTestOption(2, userAnswersCollection2, radioInputsCollection, 'test__option_radio_active',
-    'test__option_radio_notactive', renderByDataFromSessionStorage);
+    'test__option_radio_notactive', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 }
 
 
@@ -269,7 +284,7 @@ returnBottomButton.addEventListener('click', function () {
 
 //Функция анализирует данные локального хранилища sessionStorage и отрисовывает элементы страницы
 //в соответствии с сохраненными данными, либо в соответствии с текущим выбором пользователя.
-function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
+function renderTestResult(renderByDataFromSessionStorage, numberOfAttempts) {
   //Получаем результат теста - из хранилища, либо из ввода пользователя.
   let testResult;
 
@@ -277,11 +292,19 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
     testResult = Boolean(sessionStorage.getItem('testResult'));
   } else {
     testResult = getTestResult();
-    sessionStorage.setItem('testResult', (testResult ? 'v' : ''));
+
+    if (!successfulAttemptFixed) {
+      sessionStorage.setItem('testResult', (testResult ? 'v' : ''));
+    }
   };
 
+  if (!successfulAttemptFixed && testResult) successfulAttemptFixed = true;
+
+  //Рассчитываем процент верных ответов и определим необходсимость в перезапии данных о выборе пользователя в хранилище.
+  const needToReplaceAnswersInStorage = renderPercentageCorrectAnswers(renderByDataFromSessionStorage, testResult);
+
   //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
-  styleTestAnswers(renderByDataFromSessionStorage);
+  styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 
   //Меняем отображение кнопок "Показать результат" и "Пересдать".
   showResultButton.classList.add('button_hidden');
@@ -317,20 +340,26 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
     //Если пользователь трижды провалил тест (или мы отображаем данные из хранилища) - активизируем кнопку "Далее"
     //и настраиваем обработчик для перехода на другую страницу.
     //Также - деактивируем кнопку "Пересдать".
-    if (numberOfAttemts >= 3) {
+    if (numberOfAttempts === attemptsLimitCount) {
       forwardButton.classList.remove('button_state_disabled');
       forwardButton.classList.add('button_state_active');
       forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
-      forwardButton.addEventListener('click', forwardButtonGoToNegativeHandler);
 
-      //Деактивизируем кнопку "Пересдать".
-      retakeButton.classList.remove('button_state_inactive');
-      retakeButton.classList.remove('button_state_active');
-      retakeButton.classList.add('button_state_disabled');
-      retakeButton.querySelector('img').setAttribute('src', './images/retake-disabled.svg');
-      retakeButton.removeEventListener('click', retakeButtonInitialHandler);
+      //Если была хотя бы одна успешная попытка сдачи - кнопка должна вести на страницу "positive-final.html",
+      //иначе - на страницу "negative-final.html".
+      forwardButton.addEventListener('click', successfulAttemptFixed ? forwardButtonGoToPositiveHandler : forwardButtonGoToNegativeHandler);
     }
   }
+
+  //Количество попыток ограничено. Деактивизируем кнопку "Пересдать".
+  if (numberOfAttempts === attemptsLimitCount) {
+    retakeButton.classList.remove('button_state_inactive');
+    retakeButton.classList.remove('button_state_active');
+    retakeButton.classList.add('button_state_disabled');
+    retakeButton.querySelector('img').setAttribute('src', './images/retake-disabled.svg');
+    retakeButton.removeEventListener('click', retakeButtonInitialHandler);
+  }
+
 
   //После отображения результата - сбрасываем в false флаг 'showLastTestResult'.
   sessionStorage.setItem('showLastTestResult', '');
@@ -342,61 +371,92 @@ showResultButton.addEventListener('click', function () {
   if (this.classList.contains('button_state_disabled')) return;
 
   //Увеличиваем счетчик количества попыток сдачи.
-  numberOfAttemts++;
+  numberOfAttempts++;
 
-  renderTestResult(false, numberOfAttemts);
+  renderTestResult(false, numberOfAttempts);
 });
 
 
 
-//Отображаем на странице результат поледнего теста, если в локальном хранилище взведен соотв. флаг.
-if (Boolean(sessionStorage.getItem('showLastTestResult'))) {
-  renderTestResult(true, 3);
-
-  showBlock(testBlock);
-  hideBlock(previewBlock);
-}
-
-//функция посчета % правильных ответов
-const resaultTitlePositive = document.querySelector('#resultTitlePositive')
-const resaultTitleNegative = document.querySelector('#resultTitleNegative')
-
-//по клику на кнопу посмотреть результат проверяем чекбоксы и радио
-//создаем массив из value true ответов
-document.getElementById('showResultBtn').onclick = function () {
-  let result = []
+//функция посчета % правильных ответов.
+function calculatePercentageCorrectAnswers() {
+  let result = [];
   let checkboxes = document.getElementsByName('test_checkbox');
+
   for (let checkbox of checkboxes) {
     if (checkbox.checked) {
       result.push(checkbox.value);
     }
   }
+
   let radios = document.getElementsByName('test_radio');
+
   for (let radio of radios) {
     if (radio.checked) {
       result.push(radio.value);
     }
   }
+
   //считаему сумму %
-  const initialValue = 0;
   const sumWithInitial = result.reduce(
     (previousValue, currentValue) => +previousValue + +currentValue,
-    initialValue
-  );
-  // округляем и вписываем в заголовок
-  resaultTitlePositive.textContent = ((Math.round(sumWithInitial)) + '%');
-  //складтруем результат в локал сторедж
-  localStorage.setItem('storePositive', resaultTitlePositive.textContent);
+    0);
 
-  resaultTitleNegative.textContent = ((Math.round(sumWithInitial)) + '%');
-  localStorage.setItem('storeNegative', resaultTitleNegative.textContent);
-
-}
-//возвращаем результат из стореджа
-if (localStorage.getItem('storePositive') !== 'resaultTitlePositive.textContent') {
-  resaultTitlePositive.textContent = (localStorage.getItem('storePositive'))
-}
-if (localStorage.getItem('storeNegative') !== 'resaultTitleNegative.textContent') {
-  resaultTitleNegative.textContent = (localStorage.getItem('storePositive'))
+  return Math.round(sumWithInitial);
 }
 
+//по клику на кнопу посмотреть результат проверяем чекбоксы и радио
+//создаем массив из value true ответов
+function renderPercentageCorrectAnswers(renderByDataFromSessionStorage, testResult) {
+  //Флаг, показывающий необходимость в дальнейшем (в другой функции) перезаписать данные
+  //выбора пользователя в хранилище.
+  let needToReplaceAnswersInStorage = false;
+
+  const resaultTitlePositive = document.querySelector('#resultTitlePositive');
+  const resaultTitleNegative = document.querySelector('#resultTitleNegative');
+
+  if (renderByDataFromSessionStorage) { //взять данные из хранилища.
+    const percentageCorrectAnswers = sessionStorage.getItem('percentageCorrectAnswers');
+
+    if (testResult) {
+      resaultTitlePositive.textContent = sessionStorage.getItem('percentageCorrectAnswers') + '%';
+    } else {
+      resaultTitleNegative.textContent = sessionStorage.getItem('percentageCorrectAnswers') + '%';
+    }
+  } else { //вычислить проценты по вводу пользователя.
+    //считаем сумму.
+    const sum = calculatePercentageCorrectAnswers();
+
+    if (testResult) {
+      resaultTitlePositive.textContent = sum + '%';
+
+      //В случае положительного результата теста - перезаписываем данные в хранилище только в случае,
+      //если пользователь набрал не меньше процентов, чем в прошлый раз.
+      const lastPercentage = sessionStorage.getItem('percentageCorrectAnswers');
+
+      if (lastPercentage === null || Number(lastPercentage) <= sum) {
+        sessionStorage.setItem('percentageCorrectAnswers', sum);
+        needToReplaceAnswersInStorage = true;
+      }
+
+    } else {
+      resaultTitleNegative.textContent = sum + '%';
+
+      if (!successfulAttemptFixed) {
+        sessionStorage.setItem('percentageCorrectAnswers', sum);
+      }
+    }
+  }
+
+  return needToReplaceAnswersInStorage;
+}
+
+
+
+//Отображаем на странице результат поледнего теста, если в локальном хранилище взведен соотв. флаг.
+if (Boolean(sessionStorage.getItem('showLastTestResult'))) {
+  renderTestResult(true, attemptsLimitCount);
+
+  showBlock(testBlock);
+  hideBlock(previewBlock);
+}

@@ -79,12 +79,10 @@
           тест</button>
       </section>
       <div class="button__outside-test">
-        <a class="button__link" href="./video.html">
-          <button type="button" class="button button_state_inactive button_width_regular">
-            <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
-            Назад
-          </button>
-        </a>
+        <button type="button" class="button button_state_inactive button_width_regular" id="goToVideo">
+          <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
+          Назад
+        </button>
         <button type="button" class="button button_state_disabled button_width_regular">
           Далее
           <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
@@ -104,17 +102,17 @@
               </h3>
               <fieldset class="form__input-container form__input-container_type_checkbox">
                 <label class="test__option test__checkbox test__option_checkbox_notactive">
-                  <input type="checkbox" name="test_checkbox" id="chb" value="16.6" class="test__answer-checkbox">
+                  <input type="checkbox" name="test_checkbox" value="16.6" class="test__answer-checkbox">
                   <span class="test__text">Оказание помощи гражданам, оказавшимся в зонах бедствия или пропавшим в
                     безлюдной
                     местности</span>
                 </label>
                 <label class="test__option test__checkbox test__option_checkbox_notactive">
-                  <input type="checkbox" name="test_checkbox" id="chb" value="16.6" class="test__answer-checkbox">
+                  <input type="checkbox" name="test_checkbox" value="16.6" class="test__answer-checkbox">
                   <span class="test__text">Обучение животного идти как по горячему, так и по остывшему следу</span>
                 </label>
                 <label class="test__option test__checkbox test__option_checkbox_notactive">
-                  <input type="checkbox" name="test_checkbox" id="" value="16.6" class="test__answer-checkbox">
+                  <input type="checkbox" name="test_checkbox" value="16.6" class="test__answer-checkbox">
                   <span class="test__text">Поиск тел и их остатков с применением специально обученных собак</span>
                 </label>
               </fieldset>
@@ -123,15 +121,15 @@
               <h3 class="test__question">2. С какого возраста следует начинать дрессировку по курсу ПСС?</h3>
               <fieldset class="form__input-container form__input-container_type_radio">
                 <label class="test__option test__radio test__option_radio_notactive">
-                  <input type="radio" name="test_radio" id="radio" class="test__answer-radio" value="0">
+                  <input type="radio" name="test_radio" class="test__answer-radio" value="0">
                   <span class="test__text">6 месяцев</span>
                 </label>
                 <label class="test__option test__radio test__option_radio_notactive">
-                  <input type="radio" name="test_radio" id="radio" class="test__answer-radio" value="50">
+                  <input type="radio" name="test_radio" class="test__answer-radio" value="50">
                   <span class="test__text">1–1,5 года</span>
                 </label>
                 <label class="test__option test__radio test__option_radio_notactive">
-                  <input type="radio" name="test_radio" id="radio" class="test__answer-radio" value="0">
+                  <input type="radio" name="test_radio" class="test__answer-radio" value="0">
                   <span class="test__text">3 года</span>
                 </label>
               </fieldset>
