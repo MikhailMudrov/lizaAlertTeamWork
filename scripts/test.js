@@ -356,3 +356,47 @@ if (Boolean(sessionStorage.getItem('showLastTestResult'))) {
   showBlock(testBlock);
   hideBlock(previewBlock);
 }
+
+//функция посчета % правильных ответов
+const resaultTitlePositive = document.querySelector('#resultTitlePositive')
+const resaultTitleNegative = document.querySelector('#resultTitleNegative')
+
+//по клику на кнопу посмотреть результат проверяем чекбоксы и радио
+//создаем массив из value true ответов
+document.getElementById('showResultBtn').onclick = function () {
+  let result = []
+  let checkboxes = document.getElementsByName('test_checkbox');
+  for (let checkbox of checkboxes) {
+    if (checkbox.checked) {
+      result.push(checkbox.value);
+    }
+  }
+  let radios = document.getElementsByName('test_radio');
+  for (let radio of radios) {
+    if (radio.checked) {
+      result.push(radio.value);
+    }
+  }
+  //считаему сумму %
+  const initialValue = 0;
+  const sumWithInitial = result.reduce(
+    (previousValue, currentValue) => +previousValue + +currentValue,
+    initialValue
+  );
+  // округляем и вписываем в заголовок
+  resaultTitlePositive.textContent = ((Math.round(sumWithInitial)) + '%');
+  //складтруем результат в локал сторедж
+  localStorage.setItem('storePositive', resaultTitlePositive.textContent);
+
+  resaultTitleNegative.textContent = ((Math.round(sumWithInitial)) + '%');
+  localStorage.setItem('storeNegative', resaultTitleNegative.textContent);
+
+}
+//возвращаем результат из стореджа
+if (localStorage.getItem('storePositive') !== 'resaultTitlePositive.textContent') {
+  resaultTitlePositive.textContent = (localStorage.getItem('storePositive'))
+}
+if (localStorage.getItem('storeNegative') !== 'resaultTitleNegative.textContent') {
+  resaultTitleNegative.textContent = (localStorage.getItem('storePositive'))
+}
+
