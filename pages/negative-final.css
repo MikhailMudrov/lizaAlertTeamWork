@@ -1,22 +1,32 @@
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/golos-text.css);
+
 @import url(../blocks/page/page.css);
+
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__link/header__link.css);
+
 @import url(../blocks/menu/menu.css);
 @import url(../blocks/menu/__link/menu__link.css);
 @import url(../blocks/menu/__list/menu__list.css);
 @import url(../blocks/menu/__list-item/menu__list-item.css);
 @import url(../blocks/menu/__icon/menu__icon.css);
+
 @import url(../blocks/content/content.css);
+@import url(../blocks/content/__design/content__design.css);
+@import url(../blocks/content/__sidebar/content__sidebar.css);
+
 @import url(../blocks/breadcrumbs/breadcrumbs.css);
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
 @import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
-@import url(../blocks/content/__design/content__design.css);
+@import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
+
 @import url(../blocks/result-test/result-test.css);
 @import url(../blocks/result-test/__title/result-test__title.css);
 @import url(../blocks/result-test/__subtitle/result-test__subtitle.css);
 @import url(../blocks/result-test/__text/result-test__text.css);
+@import url(../blocks/result-test/__text/_style/result-test__text_style_bold.css);
+
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_state/button_state_active.css);
 @import url(../blocks/button/_state/button_state_inactive.css);
@@ -24,6 +34,7 @@
 @import url(../blocks/button/__link/button__link.css);
 @import url(../blocks/button/button__image/button__image.css);
 @import url(../blocks/button/button__image/_position/button__image_position_left.css);
+@import url(../blocks/button/__outside-test/button__outside-test.css);
 
 @import url(../blocks/sidebar-menu/sidebar-menu.css);
 @import url(../blocks/sidebar-menu/__title/sidebar-menu__title.css);
@@ -44,7 +55,3 @@
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video.css);
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_video-active.css);
 @import url(../blocks/sidebar-menu/__stages-item/_type/sidebar-menu__stages-item_type_webinar.css);
-@import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
-@import url(../blocks/content/__sidebar/content__sidebar.css);
-@import url(../blocks/button/__outside-test/button__outside-test.css);
-@import url(../blocks/result-test/__text/_style/result-test__text_style_bold.css);

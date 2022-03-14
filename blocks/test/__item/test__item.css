@@ -5,6 +5,6 @@
   margin: 0;
 }
 
-.test__item:last-child  {
+.test__item:last-child {
   border-bottom: none;
 }

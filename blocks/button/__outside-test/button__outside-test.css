@@ -10,11 +10,11 @@
 
 @media screen and (max-width: 860px) {
   .button__outside-test {
-    padding: 12px 10px;
+    padding: 12px 8px;
   }
 }
 
-@media screen and (max-width:449px) {
+@media screen and (max-width: 449px) {
   .button__outside-test {
     grid-template-columns: 140px 140px;
   }
