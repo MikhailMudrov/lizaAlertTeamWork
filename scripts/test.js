@@ -47,17 +47,18 @@ function getTestResult() {
 }
 
 //Функция меняет стили для пунктов теста при отображении результата.
-function styleTestOption(numberOfOption, collection, optionActiveClassName, optionNotActiveClassName) {
-  collection.forEach((item, index) => {
+function styleTestOption(numberOfOption, userAnswersCollection, testOptionsCollection, optionActiveClassName, optionNotActiveClassName, renderByDataFromSessionStorage) {
+  const arrForSaveToStorage = [];
+
+  testOptionsCollection.forEach((item, index) => {
+    //Получаем ответ пользователя для данного пункта теста.
+    const userAnswer = renderByDataFromSessionStorage ? userAnswersCollection[index] : item.classList.contains(optionActiveClassName);
+
+    //Определяем - верный ли это ответ.
     const rightAnswer = rightAnswers[numberOfOption][index];
 
-    /* console.log(typeof [1, 2]); */
-    /* if (typeof collection === '') {
-
-    } */
-
     //Пункт выбран пользователем...
-    if (item.classList.contains(optionActiveClassName)) {
+    if (userAnswer) {
       item.classList.remove(optionActiveClassName);
 
       if (rightAnswer) { //...и это верный ответ.
@@ -65,6 +66,8 @@ function styleTestOption(numberOfOption, collection, optionActiveClassName, opti
       } else { //...и это неверный ответ.
         item.classList.add('test__option_answer_wrong');
       }
+
+      arrForSaveToStorage.push('v');
     } else {
       //Пункт не выбран пользователем...
       item.classList.remove(optionNotActiveClassName);
@@ -74,22 +77,35 @@ function styleTestOption(numberOfOption, collection, optionActiveClassName, opti
       } else { //...и это неверный ответ.
         item.classList.add('test__option_answer_notchecked-wrong');
       }
+
+      arrForSaveToStorage.push('');
     }
   });
+
+  //Если мы стилизуем не на основании данных из хранилища, - тогда надо перезаписать эти данные текущим выбором пользователя.
+  if (!renderByDataFromSessionStorage) {
+    sessionStorage.setItem(numberOfOption, arrForSaveToStorage);
+  }
 }
 
 //Функция применяет соответствующие стили к ответам на вопросы теста с учетом корректных данных и выбора пользователя.
 function styleTestAnswers(renderByDataFromSessionStorage) {
-  const checkboxInputsCollection = renderByDataFromSessionStorage ? sessionStorage.getItem('checkboxInputsCollection') :
-    document.querySelectorAll('.test__checkbox');
-  const radioInputsCollection = renderByDataFromSessionStorage ? sessionStorage.getItem('radioInputsCollection') :
-    document.querySelectorAll('.test__radio');
+  const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
+  const radioInputsCollection = document.querySelectorAll('.test__radio');
+
+  let userAnswersCollection1 = [];
+  let userAnswersCollection2 = [];
+
+  if (Boolean(sessionStorage.getItem('1'))) userAnswersCollection1 = sessionStorage.getItem('1').split(',');
+  if (Boolean(sessionStorage.getItem('2'))) userAnswersCollection2 = sessionStorage.getItem('2').split(',');
 
   //Ответы на 1-й вопрос.
-  styleTestOption(1, checkboxInputsCollection, 'test__option_checkbox_active', 'test__option_checkbox_notactive');
+  styleTestOption(1, userAnswersCollection1, checkboxInputsCollection, 'test__option_checkbox_active',
+    'test__option_checkbox_notactive', renderByDataFromSessionStorage);
 
   //Ответы на 2-й вопрос.
-  styleTestOption(2, radioInputsCollection, 'test__option_radio_active', 'test__option_radio_notactive');
+  styleTestOption(2, userAnswersCollection2, radioInputsCollection, 'test__option_radio_active',
+    'test__option_radio_notactive', renderByDataFromSessionStorage);
 }
 
 
@@ -101,7 +117,6 @@ checkboxInputs.forEach(function (checkBox) {
     } else {
       this.parentNode.classList.remove('test__option_checkbox_active');
       this.parentNode.classList.add('test__option_checkbox_notactive');
-      console.log(this);
     }
 
     //Активация кнопки "Показать результат".
@@ -205,6 +220,7 @@ function forwardButtonGoToNegativeHandler() {
   document.location.href = './negative-final.html';
 }
 
+
 //функция скрытия блока
 function showBlock(blockId) {
   blockId.classList.remove('card_hide');
@@ -254,8 +270,15 @@ returnBottomButton.addEventListener('click', function () {
 //Функция анализирует данные локального хранилища sessionStorage и отрисовывает элементы страницы
 //в соответствии с сохраненными данными, либо в соответствии с текущим выбором пользователя.
 function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
-  //Получаем результат теста.
-  const testResult = renderByDataFromSessionStorage ? sessionStorage.getItem('testResult') : getTestResult();
+  //Получаем результат теста - из хранилища, либо из ввода пользователя.
+  let testResult;
+
+  if (renderByDataFromSessionStorage) {
+    testResult = Boolean(sessionStorage.getItem('testResult'));
+  } else {
+    testResult = getTestResult();
+    sessionStorage.setItem('testResult', (testResult ? 'v' : ''));
+  };
 
   //Стилизуем ответы на вопросы теста с учетом корректных данных и выбора пользователя.
   styleTestAnswers(renderByDataFromSessionStorage);
@@ -278,17 +301,10 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
     forwardButton.querySelector('img').setAttribute('src', './images/forward-arrow-active.svg');
     forwardButton.addEventListener('click', forwardButtonGoToPositiveHandler);
 
-    /*     //Делаем неактивной (но доступной) кнопку "Пересдать".
-        retakeButton.classList.remove('button_state_active');
-        retakeButton.classList.add('button_state_inactive');
-        retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg'); */
-
-    //Деактивизируем кнопку "Пересдать".
-    retakeButton.classList.remove('button_state_inactive');
+    //Делаем неактивной (но доступной) кнопку "Пересдать".
     retakeButton.classList.remove('button_state_active');
-    retakeButton.classList.add('button_state_disabled');
-    retakeButton.querySelector('img').setAttribute('src', './images/retake-disabled.svg');
-    retakeButton.removeEventListener('click', retakeButtonInitialHandler);
+    retakeButton.classList.add('button_state_inactive');
+    retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg');
   } else {
     //Отображаем карточку с негативным результатом теста.
     resultTestNegative.classList.remove('result-test_hidden');
@@ -298,7 +314,8 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
     retakeButton.classList.add('button_state_active');
     retakeButton.querySelector('img').setAttribute('src', './images/retake-active.svg');
 
-    //Если пользователь трижды провалил тест - активизируем кнопку "Далее" и настраиваем обработчик для перехода на другую страницу.
+    //Если пользователь трижды провалил тест (или мы отображаем данные из хранилища) - активизируем кнопку "Далее"
+    //и настраиваем обработчик для перехода на другую страницу.
     //Также - деактивируем кнопку "Пересдать".
     if (numberOfAttemts >= 3) {
       forwardButton.classList.remove('button_state_disabled');
@@ -315,9 +332,8 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttemts) {
     }
   }
 
-  //После отображения результата - сохраняем эти данные в sessionStorage.
-  //Это необходимо, если пользователь вернется назад на страницу "Тест" со страницы "Курс завершен".
-  saveTestResultLocal();
+  //После отображения результата - сбрасываем в false флаг 'showLastTestResult'.
+  sessionStorage.setItem('showLastTestResult', '');
 }
 
 //Отображение результата теста - кнопка "Показать результат".
@@ -332,10 +348,11 @@ showResultButton.addEventListener('click', function () {
 });
 
 
-//Функция сохраняет данные о прохождении теста локально - в sessionStorage.
-//Это необходимо, если пользователь вернется назад на страницу "Тест" со страницы
-//"Курс завершен" (positive-final.html или negative-final.html).
-function saveTestResultLocal(testResult) {
-  //Сбрасываем в false флаг 'showLastTestResult'.
-  sessionStorage.setItem('showLastTestResult', false);
+
+//Отображаем на странице результат поледнего теста, если в локальном хранилище взведен соотв. флаг.
+if (Boolean(sessionStorage.getItem('showLastTestResult'))) {
+  renderTestResult(true, 3);
+
+  showBlock(testBlock);
+  hideBlock(previewBlock);
 }
