@@ -1,4 +1,4 @@
-.content__outside-test {
+.content__outside-buttons {
   display: grid;
   column-gap: 24px;
   margin: 0;
@@ -9,13 +9,13 @@
 }
 
 @media screen and (max-width: 860px) {
-  .content__outside-test {
+  .content__outside-buttons {
     padding: 12px 8px;
   }
 }
 
 @media screen and (max-width: 449px) {
-  .content__outside-test {
+  .content__outside-buttons {
     grid-template-columns: 140px 140px;
   }
 }

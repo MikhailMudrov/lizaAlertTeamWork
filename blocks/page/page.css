@@ -16,8 +16,8 @@
   grid-template-areas:
     "header header"
     "breadcrumbs breadcrumbs"
-    "content content__sidebar"
-    "content content__sidebar ";
+    "content sidebar"
+    "content sidebar";
   row-gap: 24px;
 }
 

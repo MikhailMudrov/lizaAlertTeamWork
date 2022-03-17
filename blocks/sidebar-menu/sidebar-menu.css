@@ -6,10 +6,20 @@
   align-items: flex-start;
   max-width: 424px;
   overflow: hidden;
+  grid-area: sidebar;
+  padding-left: 42px;
 }
+
 
 @media screen and (max-width: 1039px) {
   .sidebar-menu {
-    max-width: 872px;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sidebar-menu {
+    padding: 0;
   }
 }
