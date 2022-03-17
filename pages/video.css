@@ -31,7 +31,7 @@
 @import url(../blocks/button/button__image/_position/button__image_position_right.css);
 @import url(../blocks/button/__link/button__link.css);
 @import url(../blocks/button/_spaced/button_spaced.css);
-@import url(../blocks/content/__outside-test/content__outside-test.css);
+@import url(../blocks/content/__outside-buttons/content__outside-buttons.css);
 
 @import url(../blocks/player/player.css);
 @import url(../blocks/player/__container/player__container.css);
