@@ -14,7 +14,6 @@
 
 @import url(../blocks/content/content.css);
 @import url(../blocks/background-shadow/background-shadow.css);
-@import url(../blocks/content/__sidebar/content__sidebar.css);
 
 @import url(../blocks/breadcrumbs/breadcrumbs.css);
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
