@@ -17,6 +17,9 @@
 @import url(../blocks/content/__text/content__text.css);
 @import url(../blocks/content/__design/content__design.css);
 @import url(../blocks/content/__sidebar/content__sidebar.css);
+@import url(../blocks/content/__space/content__space.css);
+
+@import url(../blocks/preview/__container.css);
 
 @import url(../blocks/breadcrumbs/breadcrumbs.css);
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);

@@ -5,13 +5,10 @@
   height: 48px;
   box-sizing: border-box;
   border-radius: 16px;
-  font-family: Golos;
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
   cursor: pointer;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }

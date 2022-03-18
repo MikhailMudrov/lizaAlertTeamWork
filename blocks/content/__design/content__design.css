@@ -3,6 +3,8 @@
   border-radius: 16px;
   max-width: 872px;
   padding: 32px;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 @media screen and (max-width: 860px) {

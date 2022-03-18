@@ -4,4 +4,5 @@
   color: #ff0000;
   cursor: default;
   background-position: left center;
+  box-sizing: border-box;
 }

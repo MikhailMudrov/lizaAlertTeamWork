@@ -11,14 +11,15 @@
   font-feature-settings: "kern";
   color: #212329;
   display: grid;
-  grid-template-columns: 65.5% 33.5%;
+  grid-template-columns: 65% 34%;
   grid-template-rows: 5% 2% 1fr 1fr;
   grid-template-areas:
     "header header"
     "breadcrumbs breadcrumbs"
     "content content__sidebar"
     "content content__sidebar ";
-  row-gap: 24px;
+  gap: 24px;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1039px) {

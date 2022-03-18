@@ -1,6 +1,6 @@
 .test__option_answer_notchecked-right {
   background-image: url(../../../../images/check_mark.svg);
   background-repeat: no-repeat;
-  color: #212329;
   cursor: default;
+  background-position: left center;
 }

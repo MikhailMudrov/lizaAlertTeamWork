@@ -1,4 +1,5 @@
 .test__option_checkbox_notactive {
   background-image: url(../../../../images/test_checkbox.svg);
   background-repeat: no-repeat;
+  background-position: left center;
 }

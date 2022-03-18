@@ -1,7 +1,6 @@
 .breadcrumbs__item {
   display: inline;
   list-style: none;
-  color: #212329;
 }
 
 .breadcrumbs__item:last-of-type {
