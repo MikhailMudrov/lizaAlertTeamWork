@@ -123,34 +123,41 @@ function styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersIn
     'icon__radio', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 }
 
+//Обработчик события "click" для элементов ввода типа "checkBox" (1-й вопрос теста).
+function checkboxInputsHandler() {
+  this.classList.toggle('icon__checkbox_active');
+  this.nextElementSibling.classList.toggle('test__text_theme_orange');
 
-checkboxInputs.forEach(function (checkBox) {
-  checkBox.addEventListener('click', function () {
-    checkBox.classList.toggle('icon__checkbox_active');
-    checkBox.nextElementSibling.classList.toggle('test__text_theme_orange');
+  //Активация кнопки "Показать результат".
+  changeShowResultButtonState();
+}
 
-    //Активация кнопки "Показать результат".
-    changeShowResultButtonState();
+//Обработчик события "click" для элементов ввода типа "radiobutton" (2-й вопрос теста).
+function radioInputsHandler() {
+  radioInputs.forEach((element) => {
+    if (element == this) {
+      element.classList.add('icon__radio_active');
+      element.nextElementSibling.classList.add('test__text_theme_orange');
+    }
+    else {
+      element.classList.remove('icon__radio_active');
+      element.nextElementSibling.classList.remove('test__text_theme_orange');
+    }
   });
+
+  //Активация кнопки "Показать результат".
+  changeShowResultButtonState();
+}
+
+
+//Активируем обработчик события "click" для элементов ввода типа "checkBox" (1-й вопрос теста).
+checkboxInputs.forEach(function (checkBox) {
+  checkBox.onclick = checkboxInputsHandler;
 });
 
-
+//Активируем обработчик события "click" для элементов ввода типа "radiobutton" (2-й вопрос теста).
 radioInputs.forEach(function (radio) {
-  radio.addEventListener('click', function () {
-    radioInputs.forEach((element) => {
-      if (element == radio) {
-        element.classList.add('icon__radio_active');
-        element.nextElementSibling.classList.add('test__text_theme_orange');
-      }
-      else {
-        element.classList.remove('icon__radio_active');
-        element.nextElementSibling.classList.remove('test__text_theme_orange');
-      }
-    });
-
-    //Активация кнопки "Показать результат".
-    changeShowResultButtonState();
-  });
+  radio.onclick = radioInputsHandler;
 });
 
 
@@ -207,6 +214,16 @@ function initializeTestState() {
 //Пересдача теста. Очищаем поля формы и настраиваем видимость элементов.
 function retakeButtonInitialHandler() {
   initializeTestState();
+
+  //Активируем обработчик события "click" для элементов ввода типа "checkBox" (1-й вопрос теста).
+  checkboxInputs.forEach(function (checkBox) {
+    checkBox.onclick = checkboxInputsHandler;
+  });
+
+  //Активируем обработчик события "click" для элементов ввода типа "radiobutton" (2-й вопрос теста).
+  radioInputs.forEach(function (radio) {
+    radio.onclick = radioInputsHandler;
+  });
 }
 
 retakeButton.addEventListener('click', retakeButtonInitialHandler);
@@ -361,6 +378,18 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttempts) {
 
   //После отображения результата - сбрасываем в false флаг 'showLastTestResult'.
   sessionStorage.setItem('showLastTestResult', '');
+
+  //Если отображаем данные из хранилища - удаляем обработчик "onclick" для элементов ввода типа "checkBox" (1-й вопрос теста)
+  //и элементов ввода типа "radiobutton" (2-й вопрос теста).
+  if (renderByDataFromSessionStorage) {
+    checkboxInputs.forEach(function (checkBox) {
+      checkBox.onclick = null;
+    });
+
+    radioInputs.forEach(function (radio) {
+      radio.onclick = null;
+    });
+  }
 }
 
 //Отображение результата теста - кнопка "Показать результат".
@@ -372,6 +401,16 @@ showResultButton.addEventListener('click', function () {
   numberOfAttempts++;
 
   renderTestResult(false, numberOfAttempts);
+
+  //Деактивируем обработчик события "click" для элементов ввода типа "checkBox" (1-й вопрос теста).
+  checkboxInputs.forEach(function (checkBox) {
+    checkBox.onclick = null;
+  });
+
+  //Деактивируем обработчик события "click" для элементов ввода типа "radiobutton" (2-й вопрос теста).
+  radioInputs.forEach(function (radio) {
+    radio.onclick = null;
+  });
 });
 
 
