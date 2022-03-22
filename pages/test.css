@@ -38,7 +38,6 @@
 @import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
 @import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
 @import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
-@import url(../blocks/breadcrumbs/__text/breadcrumbs__text.css);
 
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_state/button_state_active.css);
@@ -48,9 +47,9 @@
 @import url(../blocks/button/_width/button_width_regular.css);
 @import url(../blocks/button/_width/button_width_wide.css);
 @import url(../blocks/button/__link/button__link.css);
-@import url(../blocks/button/button__image/button__image.css);
-@import url(../blocks/button/button__image/_position/button__image_position_left.css);
-@import url(../blocks/button/button__image/_position/button__image_position_right.css);
+@import url(../blocks/button/__image/button__image.css);
+@import url(../blocks/button/__image/_position/button__image_position_left.css);
+@import url(../blocks/button/__image/_position/button__image_position_right.css);
 @import url(../blocks/button/__conditions/button__conditions.css);
 
 @import url(../blocks/icon/icon.css);

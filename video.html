@@ -33,35 +33,37 @@
   <nav class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="https://mikhailmudrov.github.io/liza-project/index.html">Курсы</a>
+        <a class="section-text breadcrumbs__link"
+          href="https://mikhailmudrov.github.io/liza-project/index.html">Курсы</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Кинологическое направление</a>
+        <a class="section-text breadcrumbs__link" href="#">Кинологическое направление</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">5. Работа «второго номера» совместно со следовым кинологическим
+        <a class="section-text breadcrumbs__link" href="#">5. Работа «второго номера» совместно со
+          следовым кинологическим
           расчётом</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Видео</a>
+        <a class="section-text breadcrumbs__link" href="#">Видео</a>
       </li>
     </ul>
   </nav>
   <main class="content">
-    <section class="video section section-background">
+    <section class="player section section-background">
       <h1 class="section-title">Видео</h1>
       <div class="player__container">
         <div class="player__control-bar">
           <button type="button" class="player__play-button"></button>
           <div class="range-slider player__timeline-ctrl" style='--min:0; --max:100; --step:1; --value:1'>
-            <input type="range" min="0" max="100" step="1" value="1"
+            <input type="range" class="range-slider__progress-bar" min="0" max="100" step="1" value="1"
               oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--value', (+this.value))">
             <div class='range-slider__progress'></div>
           </div>
           <div class="player__sound-level">
             <img src="./images/player-sound-level-ico.svg" alt="Уровень звука" class="player__sound-level-img">
             <div class="range-slider player__sound-level-ctrl" style='--min:0; --max:100; --step:1; --value:1'>
-              <input type="range" min="0" max="100" step="1" value="1"
+              <input type="range" class="range-slider__progress-bar" min="0" max="100" step="1" value="1"
                 oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--value', (+this.value))">
               <div class='range-slider__progress'></div>
             </div>
@@ -180,7 +182,7 @@
         <li class="sidebar-menu__item">
           <p class="section-text sidebar-menu__text">6.&nbsp;Оценка качества и&nbsp;особенности анализа
             результата
-            проделанной следовым кинологическим расчётом работы</p>
+            проделанной следовым кинологическим расчётом&nbsp;работы</p>
           <div class="icon icon__sidebar-menu"></div>
           <ul class="section-list sidebar-menu__item-list">
             <li class="section-list__item">
@@ -193,8 +195,8 @@
           <p class="section-text sidebar-menu__text">7.&nbsp;Особенности и&nbsp;пределы использования
             РПРС
             ом&nbsp;полученной
-            в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения
-            поисков</p>
+            в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения&nbsp;поисков
+          </p>
           <div class="icon icon__sidebar-menu"></div>
           <ul class="section-list sidebar-menu__item-list">
             <li class="section-list__item">

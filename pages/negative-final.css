@@ -12,12 +12,9 @@
 @import url(../blocks/menu/__list-item/menu__list-item.css);
 @import url(../blocks/menu/__icon/menu__icon.css);
 
-@import url(../blocks/breadcrumbs/breadcrumbs.css);
-@import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
-@import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
-@import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
-
 @import url(../blocks/content/content.css);
+
+@import url(../blocks/section/section.css);
 
 @import url(../blocks/section-title/section-title.css);
 
@@ -27,13 +24,14 @@
 
 @import url(../blocks/section-button/section-button.css);
 
-@import url(../blocks/section/section.css);
-
 @import url(../blocks/section-list/section-list.css);
 
-@import url(../blocks/section-list/__condition/section-list__condition.css);
-
 @import url(../blocks/section-list/__item/section-list__item.css);
+
+@import url(../blocks/breadcrumbs/breadcrumbs.css);
+@import url(../blocks/breadcrumbs/__link/breadcrumbs__link.css);
+@import url(../blocks/breadcrumbs/__item/breadcrumbs__item.css);
+@import url(../blocks/breadcrumbs/__list/breadcrumbs__list.css);
 
 @import url(../blocks/button/button.css);
 @import url(../blocks/button/_state/button_state_active.css);
@@ -43,9 +41,9 @@
 @import url(../blocks/button/_width/button_width_regular.css);
 @import url(../blocks/button/_width/button_width_wide.css);
 @import url(../blocks/button/__link/button__link.css);
-@import url(../blocks/button/button__image/button__image.css);
-@import url(../blocks/button/button__image/_position/button__image_position_left.css);
-@import url(../blocks/button/button__image/_position/button__image_position_right.css);
+@import url(../blocks/button/__image/button__image.css);
+@import url(../blocks/button/__image/_position/button__image_position_left.css);
+@import url(../blocks/button/__image/_position/button__image_position_right.css);
 
 @import url(../blocks/icon/icon.css);
 @import url(../blocks/icon/__check-mark/_active/icon__check-mark_active.css);
