@@ -3,9 +3,15 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0 0 10px;
+  padding: 0 0 8px;
 }
 
 .breadcrumbs__list .breadcrumbs__item + .breadcrumbs__item::before {
   content: "\00a0\276F\00a0";
+}
+
+@media screen and (max-width: 500px) {
+  .breadcrumbs__list {
+    padding: 10px;
+  }
 }
