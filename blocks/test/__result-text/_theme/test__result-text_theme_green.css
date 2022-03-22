@@ -1,9 +1,8 @@
 .test__result-text_theme_green {
   color: #008000;
+  max-width: 680px;
 }
 
-@media screen and (max-width: 1439px) {
-  .test__result-text_theme_green {
-    white-space: normal;
-  }
+.test__result-text_theme_green:last-child {
+  padding-top: 0;
 }
