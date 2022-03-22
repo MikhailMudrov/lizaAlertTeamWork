@@ -8,6 +8,7 @@
 
 .breadcrumbs__list .breadcrumbs__item + .breadcrumbs__item::before {
   content: "\00a0\276F\00a0";
+  padding-left: 4px;
 }
 
 @media screen and (max-width: 500px) {

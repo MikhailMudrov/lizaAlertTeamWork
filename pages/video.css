@@ -52,6 +52,7 @@
 @import url(../blocks/icon/__lesson/icon__lesson.css);
 @import url(../blocks/icon/__sidebar-menu/icon__sidebar-menu.css);
 @import url(../blocks/icon/__sidebar-menu/_rotated/icon__sidebar-menu_rotated.css);
+@import url(../blocks/icon/_position/icon_position.css);
 
 @import url(../blocks/player/__container/player__container.css);
 @import url(../blocks/player/__control-bar/player__control-bar.css);
