@@ -51,6 +51,7 @@
 @import url(../blocks/icon/__sidebar-menu/icon__sidebar-menu.css);
 @import url(../blocks/icon/__sidebar-menu/_rotated/icon__sidebar-menu_rotated.css);
 @import url(../blocks/icon/__test/_active/icon__test_active.css);
+@import url(../blocks/icon/_position/icon_position.css);
 
 @import url(../blocks/test/__result/test__result.css);
 @import url(../blocks/test/__result-title/test__result-title.css);

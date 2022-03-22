@@ -11,16 +11,16 @@
   -ms-font-feature-settings: "kern" 1;
   font-feature-settings: "kern";
   color: #212329;
+  width: 100%;
   display: grid;
   padding: 0;
-  grid-template-columns: 60px 2fr 24px 1fr 60px;
+  grid-template-columns: 60px minmax(min-content, calc(65% - 60px)) 24px 1fr 60px;
   grid-template-areas:
     "header header header header header"
     ". breadcrumbs breadcrumbs breadcrumbs ."
     ". content . sidebar-menu ."
     ". content . sidebar-menu .";
   row-gap: 24px;
-  width: 100%;
 }
 
 @media screen and (max-width: 1039px) {
