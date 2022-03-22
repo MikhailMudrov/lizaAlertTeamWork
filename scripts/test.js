@@ -1,22 +1,19 @@
-import { createSideMenuHandlers } from "./side-menu.js";
-
-createSideMenuHandlers();
 
 let numberOfAttempts = 0;
 let successfulAttemptFixed = false;
 
 const attemptsLimitCount = 3;
 
-const checkboxInputs = document.querySelectorAll('.test__answer-checkbox');
-const radioInputs = document.querySelectorAll('.test__answer-radio');
+const checkboxInputs = document.querySelector('#test-item_1').querySelectorAll('.icon');
+const radioInputs = document.querySelector('#test-item_2').querySelectorAll('.icon');
 
 const showResultButton = document.querySelector('#showResultBtn');
 const retakeButton = document.querySelector('#retakeBtn');
 const forwardButton = document.querySelector('#forwardBtn');
 const goToVideoButton = document.querySelector('#goToVideo');
 
-const resultTestPositive = document.querySelector('.result-test_type_positive');
-const resultTestNegative = document.querySelector('.result-test_type_negative');
+const resultTestPositive = document.querySelector('#resultContainerPositive');
+const resultTestNegative = document.querySelector('#resultContainerNegative');
 
 const rightAnswers = {
   1: [true, true, true],
@@ -33,8 +30,8 @@ goToVideoButton.addEventListener('click', goToVideoButtonHandler);
 
 function changeShowResultButtonState() {
   //Если выбрано хотя бы по одному ответу каждом вопросе - кнопка становится активной.
-  const checkboxChosen = document.querySelectorAll('.test__option_checkbox_active');
-  const radioChosen = document.querySelectorAll('.test__option_radio_active');
+  const checkboxChosen = document.querySelector('#test-item_1').querySelectorAll('.icon__checkbox_active');
+  const radioChosen = document.querySelector('#test-item_2').querySelectorAll('.icon__radio_active');
 
   if (checkboxChosen.length && radioChosen.length) {
     showResultButton.classList.remove('button_state_disabled');
@@ -52,8 +49,8 @@ function changeShowResultButtonState() {
 //Результат положительный, когда в первом вопросе выбрано 2 или 3 варианта ответа,
 //а во втором вопросе выбран второй вариант.
 function getTestResult() {
-  const firstQuestionResult = document.querySelectorAll('.test__option_checkbox_active').length > 1;
-  const secondQuestionResult = document.querySelectorAll('.test__radio').item(1).classList.contains('test__option_radio_active');
+  const firstQuestionResult = document.querySelector('#test-item_1').querySelectorAll('.icon__checkbox_active').length > 1;
+  const secondQuestionResult = document.querySelector('#test-item_2').querySelectorAll('.icon__radio').item(1).classList.contains('icon__radio_active');
 
   return firstQuestionResult && secondQuestionResult;
 }
@@ -73,22 +70,25 @@ function styleTestOption(numberOfOption, userAnswersCollection, testOptionsColle
     //Пункт выбран пользователем...
     if (userAnswer) {
       item.classList.remove(optionActiveClassName);
+      item.nextElementSibling.classList.remove('test__text_theme_orange');
 
       if (rightAnswer) { //...и это верный ответ.
-        item.classList.add('test__option_answer_right');
+        item.classList.add('icon__check-mark_active');
+        item.nextElementSibling.classList.add('test__result-text_theme_green');
       } else { //...и это неверный ответ.
-        item.classList.add('test__option_answer_wrong');
+        item.classList.add('icon__cross_failure');
+        item.nextElementSibling.classList.add('test__result-text_theme_red');
       }
 
       arrForSaveToStorage.push('v');
     } else {
       //Пункт не выбран пользователем...
-      item.classList.remove(optionNotActiveClassName);
+      //item.classList.remove(optionNotActiveClassName);
 
       if (rightAnswer) { //...и это верный ответ.
-        item.classList.add('test__option_answer_notchecked-right');
+        item.classList.add('icon__check-mark');
       } else { //...и это неверный ответ.
-        item.classList.add('test__option_answer_notchecked-wrong');
+        item.classList.add('icon__cross');
       }
 
       arrForSaveToStorage.push('');
@@ -97,7 +97,7 @@ function styleTestOption(numberOfOption, userAnswersCollection, testOptionsColle
 
   //Если мы стилизуем не на основании данных из хранилища, - тогда надо перезаписать эти данные текущим выбором пользователя.
   if (!renderByDataFromSessionStorage) {
-     if (!successfulAttemptFixed || (successfulAttemptFixed && needToReplaceAnswersInStorage)) {
+    if (!successfulAttemptFixed || (successfulAttemptFixed && needToReplaceAnswersInStorage)) {
       sessionStorage.setItem(numberOfOption, arrForSaveToStorage);
     }
   }
@@ -105,8 +105,8 @@ function styleTestOption(numberOfOption, userAnswersCollection, testOptionsColle
 
 //Функция применяет соответствующие стили к ответам на вопросы теста с учетом корректных данных и выбора пользователя.
 function styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersInStorage) {
-  const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
-  const radioInputsCollection = document.querySelectorAll('.test__radio');
+  const checkboxInputsCollection = document.querySelector('#test-item_1').querySelectorAll('.icon');
+  const radioInputsCollection = document.querySelector('#test-item_2').querySelectorAll('.icon');
 
   let userAnswersCollection1 = [];
   let userAnswersCollection2 = [];
@@ -115,24 +115,19 @@ function styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersIn
   if (Boolean(sessionStorage.getItem('2'))) userAnswersCollection2 = sessionStorage.getItem('2').split(',');
 
   //Ответы на 1-й вопрос.
-  styleTestOption(1, userAnswersCollection1, checkboxInputsCollection, 'test__option_checkbox_active',
-    'test__option_checkbox_notactive', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
+  styleTestOption(1, userAnswersCollection1, checkboxInputsCollection, 'icon__checkbox_active',
+    'icon__checkbox', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 
   //Ответы на 2-й вопрос.
-  styleTestOption(2, userAnswersCollection2, radioInputsCollection, 'test__option_radio_active',
-    'test__option_radio_notactive', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
+  styleTestOption(2, userAnswersCollection2, radioInputsCollection, 'icon__radio_active',
+    'icon__radio', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 }
 
 
 checkboxInputs.forEach(function (checkBox) {
   checkBox.addEventListener('click', function () {
-    if (checkBox.parentNode.classList.contains("test__option_checkbox_notactive")) {
-      this.parentNode.classList.remove('test__option_checkbox_notactive');
-      this.parentNode.classList.add('test__option_checkbox_active');
-    } else {
-      this.parentNode.classList.remove('test__option_checkbox_active');
-      this.parentNode.classList.add('test__option_checkbox_notactive');
-    }
+    checkBox.classList.toggle('icon__checkbox_active');
+    checkBox.nextElementSibling.classList.toggle('test__text_theme_orange');
 
     //Активация кнопки "Показать результат".
     changeShowResultButtonState();
@@ -144,12 +139,12 @@ radioInputs.forEach(function (radio) {
   radio.addEventListener('click', function () {
     radioInputs.forEach((element) => {
       if (element == radio) {
-        element.parentNode.classList.remove('test__option_radio_notactive');
-        element.parentNode.classList.add('test__option_radio_active');
+        element.classList.add('icon__radio_active');
+        element.nextElementSibling.classList.add('test__text_theme_orange');
       }
       else {
-        element.parentNode.classList.remove('test__option_radio_active');
-        element.parentNode.classList.add('test__option_radio_notactive');
+        element.classList.remove('icon__radio_active');
+        element.nextElementSibling.classList.remove('test__text_theme_orange');
       }
     });
 
@@ -159,16 +154,19 @@ radioInputs.forEach(function (radio) {
 });
 
 
+
 //Функция удаляет из всех элементов вопроса теста все классы, отвечающие за стили, примененные при отображении
 //результатов прохождения теста.
 function removeClassesFromTestOption(collection, classToInactivate) {
-  const classesToRemove = ['test__option_answer_notchecked-right', 'test__option_answer_notchecked-wrong',
-    'test__option_answer_right', 'test__option_answer_wrong', 'test__option_checkbox_active', 'test__option_radio_active'];
+  const classesToRemove = ['icon__checkbox_active', 'icon__radio_active', 'icon__check-mark_active', 'icon__cross_failure',
+    'icon__check-mark', 'icon__cross'];
 
   collection.forEach((item) => {
     classesToRemove.forEach((classItem) => {
       if (item.classList.contains(classItem)) {
         item.classList.remove(classItem);
+        item.nextElementSibling.classList.remove('test__result-text_theme_green');
+        item.nextElementSibling.classList.remove('test__result-text_theme_red');
       }
     });
 
@@ -179,25 +177,25 @@ function removeClassesFromTestOption(collection, classToInactivate) {
 //Функция производит начальную инициацию страницы теста - очистка полей, настройка видимости элементов.
 function initializeTestState() {
   //Очищаем поля формы.
-  const checkboxInputsCollection = document.querySelectorAll('.test__checkbox');
-  const radioInputsCollection = document.querySelectorAll('.test__radio');
+  const checkboxInputsCollection = document.querySelector('#test-item_1').querySelectorAll('.icon');
+  const radioInputsCollection = document.querySelector('#test-item_2').querySelectorAll('.icon');
 
-  removeClassesFromTestOption(checkboxInputsCollection, 'test__option_checkbox_notactive');
-  removeClassesFromTestOption(radioInputsCollection, 'test__option_radio_notactive');
+  removeClassesFromTestOption(checkboxInputsCollection, 'icon__checkbox');
+  removeClassesFromTestOption(radioInputsCollection, 'icon__radio');
 
   //Скрываем видимость карточек с результатом теста.
-  if (!resultTestPositive.classList.contains('result-test_hidden')) {
-    resultTestPositive.classList.add('result-test_hidden');
+  if (!resultTestPositive.classList.contains('hide')) {
+    resultTestPositive.classList.add('hide');
   }
 
-  if (!resultTestNegative.classList.contains('result-test_hidden')) {
-    resultTestNegative.classList.add('result-test_hidden');
+  if (!resultTestNegative.classList.contains('hide')) {
+    resultTestNegative.classList.add('hide');
   }
 
   //Скрываем кнопку "Пересдать" и отображаем кнопку "Показать результат".
-  retakeButton.classList.add('button_hidden');
+  retakeButton.classList.add('hide');
 
-  showResultButton.classList.remove('button_hidden');
+  showResultButton.classList.remove('hide');
   showResultButton.classList.remove('button_state_active');
   showResultButton.classList.add('button_state_disabled');
 
@@ -217,14 +215,14 @@ retakeButton.addEventListener('click', retakeButtonInitialHandler);
 
 
 //константы для показа/скрытия карточки
-const previewBlock = document.querySelector('#preview')
+const previewBlock = document.querySelector('#preview');
 const testBlock = document.querySelector('#test');
 const aboutBlock = document.querySelector('#about');
-const startTestButton = document.querySelector('#startTestBtn')
+const startTestButton = document.querySelector('#startTestBtn');
 const aboutButton = document.querySelector('#aboutBtn');
-const backToPreviewButton = document.querySelector('#backToPreviewBtn')
+const backToPreviewButton = document.querySelector('#backToPreviewBtn');
 const returnButton = document.querySelector('#returnBtn');
-const returnBottomButton = document.querySelector('#returnBottomBtn')
+const returnBottomButton = document.querySelector('#returnBottomBtn');
 
 //Обработчики для кнопки "Далее".
 function forwardButtonGoToPositiveHandler() {
@@ -238,12 +236,12 @@ function forwardButtonGoToNegativeHandler() {
 
 //функция скрытия блока
 function showBlock(blockId) {
-  blockId.classList.remove('card_hide');
+  blockId.classList.remove('hide');
 };
 
 //Функция добавления блока
 function hideBlock(blockId) {
-  blockId.classList.add('card_hide');
+  blockId.classList.add('hide');
 };
 
 // поменять карточку превью на карточку теста и инициализировать состояние теста.
@@ -307,8 +305,8 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttempts) {
   styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 
   //Меняем отображение кнопок "Показать результат" и "Пересдать".
-  showResultButton.classList.add('button_hidden');
-  retakeButton.classList.remove('button_hidden');
+  showResultButton.classList.add('hide');
+  retakeButton.classList.remove('hide');
 
   //Перенастраиваем кнопку "Назад".
   backToPreviewButton.removeEventListener('click', backToPreviewButtonHandler);
@@ -316,7 +314,7 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttempts) {
 
   if (testResult) {
     //Отображаем карточку с позитивным результатом теста.
-    resultTestPositive.classList.remove('result-test_hidden');
+    resultTestPositive.classList.remove('hide');
 
     //Активизируем кнопку "Далее" и настраиваем обработчик для перехода на другую страницу.
     forwardButton.classList.remove('button_state_disabled');
@@ -330,7 +328,7 @@ function renderTestResult(renderByDataFromSessionStorage, numberOfAttempts) {
     retakeButton.querySelector('img').setAttribute('src', './images/retake-inactive.svg');
   } else {
     //Отображаем карточку с негативным результатом теста.
-    resultTestNegative.classList.remove('result-test_hidden');
+    resultTestNegative.classList.remove('hide');
 
     //Активизируем кнопку "Пересдать".
     retakeButton.classList.remove('button_state_inactive');
@@ -460,3 +458,22 @@ if (Boolean(sessionStorage.getItem('showLastTestResult'))) {
   showBlock(testBlock);
   hideBlock(previewBlock);
 }
+
+
+const menuItemList = document.querySelectorAll(".sidebar-menu__item-list");
+
+menuItemList.forEach(item => {
+  item.parentNode.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+    item.classList.toggle("sidebar-menu__item-list_open");
+  });
+});
+
+const menuIcon = document.querySelectorAll(".icon__sidebar-menu");
+
+menuIcon.forEach(item => {
+  item.parentNode.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+    item.classList.toggle("icon__sidebar-menu_rotated");
+  });
+});

@@ -1,0 +1,10 @@
+.test__result-text {
+  text-align: center;
+  margin: 0 auto;
+  padding: 8px 75px 11px;
+  max-width: 680px;
+}
+
+.test__result-text:last-child {
+  padding-bottom: 32px;
+}

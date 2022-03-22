@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   .button_width_regular {
     width: 135px;
   }

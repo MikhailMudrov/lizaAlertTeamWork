@@ -1,6 +1,7 @@
 .page {
   background-color: #fcfcfc;
   font-family: Golos, Arial, Helvetica, sans-serif;
+  font-weight: 400;
   max-width: 1440px;
   margin: auto;
   -webkit-font-smoothing: antialiased;
@@ -11,25 +12,35 @@
   font-feature-settings: "kern";
   color: #212329;
   display: grid;
-  grid-template-columns: 65% 34%;
-  grid-template-rows: 5% 2% 1fr 1fr;
+  padding: 0;
+  grid-template-columns: 60px 2fr 24px 1fr 60px;
   grid-template-areas:
-    "header header"
-    "breadcrumbs breadcrumbs"
-    "content content__sidebar"
-    "content content__sidebar ";
-  gap: 24px;
-  box-sizing: border-box;
+    "header header header header header"
+    ". breadcrumbs breadcrumbs breadcrumbs ."
+    ". content . sidebar-menu ."
+    ". content . sidebar-menu .";
+  row-gap: 24px;
+  width: 100%;
 }
 
 @media screen and (max-width: 1039px) {
   .page {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: 19px 1fr 19px;
+    grid-template-areas:
+      "header header header"
+      ". breadcrumbs ."
+      ". content ."
+      ". sidebar-menu .";
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page {
+    grid-template-columns: 100%;
     grid-template-areas:
       "header"
       "breadcrumbs"
       "content"
-      "content__sidebar";
+      "sidebar-menu";
   }
 }

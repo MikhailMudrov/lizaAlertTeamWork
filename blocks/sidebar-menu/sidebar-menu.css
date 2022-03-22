@@ -1,15 +1,12 @@
 .sidebar-menu {
-  box-sizing: border-box;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  grid-area: sidebar-menu;
   max-width: 424px;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1039px) {
   .sidebar-menu {
-    max-width: 872px;
+    max-width: 808px;
+    margin: 0 auto;
   }
 }

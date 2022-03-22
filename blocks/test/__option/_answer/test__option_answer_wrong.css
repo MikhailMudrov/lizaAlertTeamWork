@@ -1,8 +1,0 @@
-.test__option_answer_wrong {
-  background-image: url(../../../../images/red_cross.svg);
-  background-repeat: no-repeat;
-  color: #ff0000;
-  cursor: default;
-  background-position: left center;
-  box-sizing: border-box;
-}

@@ -1,0 +1,8 @@
+.sidebar-menu__item-list_open {
+  padding-top: 32px;
+  max-height: 100vh;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: 0.75s all ease;
+  transition: 0.75s all ease;
+}

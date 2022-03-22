@@ -1,0 +1,6 @@
+.icon__checkbox {
+  background-image: url(../../../images/test_checkbox.svg);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

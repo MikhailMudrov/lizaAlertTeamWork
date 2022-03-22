@@ -1,9 +1,3 @@
-import {createSideMenuHandlers} from "./side-menu.js";
-
-createSideMenuHandlers();
-
-
-
 const backButton = document.querySelector('#backBtn');
 const goToCousresButton = document.querySelector('#goToCourses');
 
@@ -16,4 +10,22 @@ backButton.addEventListener('click', function () {
 
 goToCousresButton.addEventListener('click', function () {
   document.location.href = 'https://mikhailmudrov.github.io/liza-project/index.html';
+});
+
+const menuItemList = document.querySelectorAll(".sidebar-menu__item-list");
+
+menuItemList.forEach(item => {
+  item.parentNode.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+    item.classList.toggle("sidebar-menu__item-list_open");
+  });
+});
+
+const menuIcon = document.querySelectorAll(".icon__sidebar-menu");
+
+menuIcon.forEach(item => {
+  item.parentNode.addEventListener("click", function (evt) {
+    evt.stopPropagation();
+    item.classList.toggle("icon__sidebar-menu_rotated");
+  });
 });

@@ -1,0 +1,10 @@
+.test__result-text_typography {
+  white-space: pre;
+  padding: 0;
+}
+
+@media screen and (max-width: 1439px) {
+  .test__result-text_typography {
+    white-space: normal;
+  }
+}

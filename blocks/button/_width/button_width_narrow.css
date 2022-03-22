@@ -1,6 +1,6 @@
 .button_width_narrow {
   width: 176px;
-  margin: 32px auto 0;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 450px) {

@@ -32,53 +32,57 @@
   <nav class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="https://mikhailmudrov.github.io/liza-project/index.html">Курсы</a>
+        <a class="breadcrumbs__link section-text breadcrumbs__text"
+          href="https://mikhailmudrov.github.io/liza-project/index.html">Курсы</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Кинологическое направление</a>
+        <a class="breadcrumbs__link section-text breadcrumbs__text" href="#">Кинологическое направление</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">5. Работа «второго номера» совместно со следовым кинологическим
+        <a class="breadcrumbs__link section-text breadcrumbs__text" href="#">5. Работа «второго номера» совместно со
+          следовым
+          кинологическим
           расчётом</a>
       </li>
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="#">Тест</a>
+        <a class="breadcrumbs__link section-text breadcrumbs__text" href="#">Тест</a>
       </li>
     </ul>
   </nav>
   <main class="content">
-    <div class="preview__container" id="preview">
-      <section class="card content__design">
-        <h1 class="card__title content__title">Тест</h1>
-        <p class="content__text">Что мы узнали об особенностях привлечения следовых расчётов на ПСР и особенностях
+    <section class="conditions section" id="preview">
+      <div class="section-background">
+        <h1 class="section-title ">Тест</h1>
+        <p class="section-text section-subtitle">Что мы узнали об особенностях привлечения следовых расчётов
+          на ПСР и особенностях
           взаимодействия между участниками ППС</p>
-        <ul class="test__list">
-          <li class="test__point">
-            <div class="test__image test__score"></div>
-            <div class="test__text">
-              <p class="content__text">Проходной балл:</p>
-              <p class="content__text">80%</p>
+        <ul class="section-list">
+          <li class="section-list__item">
+            <div class="icon icon__check-mark"></div>
+            <div class="section-list__condition">
+              <p class="section-text">Проходной балл:</p>
+              <p class="section-text">80%</p>
             </div>
           </li>
-          <li class="test__point">
-            <div class="test__image test__tries"></div>
-            <div class="test__text">
-              <p class="content__text">Количество попыток:</p>
-              <p class="content__text">3</p>
+          <li class="section-list__item">
+            <div class="icon icon__circular-arrow"></div>
+            <div class="section-list__condition">
+              <p class="section-text">Количество попыток:</p>
+              <p class="section-text">3</p>
             </div>
           </li>
-          <li class="test__point">
-            <div class="test__image test__time"></div>
-            <div class="test__text">
-              <p class="content__text">Срок сдачи:</p>
-              <p class="content__text">22.02.2022 г. 16:20 (GMT+3)</p>
+          <li class="section-list__item">
+            <div class="icon icon__sandglass"></div>
+            <div class="section-list__condition">
+              <p class="section-text conditions__text">Срок сдачи:</p>
+              <p class="section-text conditions__text">22.02.2022 г. 16:20 (GMT+3)</p>
             </div>
           </li>
         </ul>
         <button type="button" class="button button_state_active button_width_regular" id="startTestBtn">Начать
           тест</button>
-      </section>
-      <div class="button__outside-test">
+      </div>
+      <div class="section-button">
         <button type="button" class="button button_state_inactive button_width_regular" id="goToVideo">
           <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
           Назад
@@ -88,75 +92,83 @@
           <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
         </button>
       </div>
-    </div>
-    <section class="content__space card_hide" id="test">
-      <div class="card content__design">
-        <div class="card__header">
-          <h2 class="card__title">Тест</h2>
-          <button class="card__conditions" id="aboutBtn">Посмотреть условия</button>
+    </section>
+    <section class="test section hide" id="test">
+      <div class="section-background">
+        <div class="section-header">
+          <h2 class="section-title ">Тест</h2>
+          <button class="button__conditions" id="aboutBtn">Посмотреть условия</button>
         </div>
         <form class="test__form" id="testForm">
-          <ol class="test__list">
-            <li class="test__item">
+          <ol class="section-list test__list">
+            <li class="test__item" id="test-item_1">
               <h3 class="test__question">1. В каких случаях перспективно применение следовых кинологических расчётов?
               </h3>
-              <fieldset class="form__input-container form__input-container_type_checkbox">
-                <label class="test__option test__checkbox test__option_checkbox_notactive">
-                  <input type="checkbox" name="test_checkbox" value="16.6" class="test__answer-checkbox">
-                  <span class="test__text">Оказание помощи гражданам, оказавшимся в зонах бедствия или пропавшим в
+              <fieldset class="test__form-container">
+                <label class="test__answer-options">
+                  <input type="checkbox" name="test_checkbox" value="16.6" class="icon icon__checkbox">
+                  <span class="section-text test__text">Оказание помощи гражданам, оказавшимся в зонах бедствия или
+                    пропавшим в
                     безлюдной
                     местности</span>
                 </label>
-                <label class="test__option test__checkbox test__option_checkbox_notactive">
-                  <input type="checkbox" name="test_checkbox" value="16.6" class="test__answer-checkbox">
-                  <span class="test__text">Обучение животного идти как по горячему, так и по остывшему следу</span>
+                <label class="test__answer-options">
+                  <input type="checkbox" name="test_checkbox" value="16.6" class="icon icon__checkbox">
+                  <span class="section-text test__text">Обучение животного идти как по горячему, так и по остывшему
+                    следу</span>
                 </label>
-                <label class="test__option test__checkbox test__option_checkbox_notactive">
-                  <input type="checkbox" name="test_checkbox" value="16.6" class="test__answer-checkbox">
-                  <span class="test__text">Поиск тел и их остатков с применением специально обученных собак</span>
+                <label class="test__answer-options">
+                  <input type="checkbox" name="test_checkbox" value="16.6" class="icon icon__checkbox">
+                  <span class="section-text test__text">Поиск тел и их остатков с применением специально обученных
+                    собак</span>
                 </label>
               </fieldset>
             </li>
-            <li class="test__item">
+            <li class="test__item" id="test-item_2">
               <h3 class="test__question">2. С какого возраста следует начинать дрессировку по курсу ПСС?</h3>
-              <fieldset class="form__input-container form__input-container_type_radio">
-                <label class="test__option test__radio test__option_radio_notactive">
-                  <input type="radio" name="test_radio" class="test__answer-radio" value="0">
-                  <span class="test__text">6 месяцев</span>
+              <fieldset class="test__form-container">
+                <label class="test__answer-options">
+                  <input type="radio" name="test_radio" class="icon icon__radio" value="0">
+                  <span class="section-text test__text">6 месяцев</span>
                 </label>
-                <label class="test__option test__radio test__option_radio_notactive">
-                  <input type="radio" name="test_radio" class="test__answer-radio" value="50">
-                  <span class="test__text">1–1,5 года</span>
+                <label class="test__answer-options">
+                  <input type="radio" name="test_radio" class="icon icon__radio" value="50">
+                  <span class="section-text test__text">1–1,5 года</span>
                 </label>
-                <label class="test__option test__radio test__option_radio_notactive">
-                  <input type="radio" name="test_radio" class="test__answer-radio" value="0">
-                  <span class="test__text">3 года</span>
+                <label class="test__answer-options">
+                  <input type="radio" name="test_radio" class="icon icon__radio" value="0">
+                  <span class="section-text test__text">3 года</span>
                 </label>
               </fieldset>
             </li>
           </ol>
         </form>
-        <div class="result-test result-test_type_positive result-test_hidden">
-          <h3 class="result-test__title result-test_theme_green" id="resultTitlePositive">83%</h3>
-          <p class="result-test__text result-test_theme_green">Отличный результат!</p>
-          <p class="result-test__text result-test_theme_green">Нажите &laquo;Далее&raquo; чтобы продолжить.
+        <div class="test__result test__result_theme_green test__result_position_bottom-indent hide"
+          id="resultContainerPositive">
+          <h3 class="section-title test__result-title  test__result-title_theme_green" id="resultTitlePositive">83%</h3>
+          <p class="section-text test__result-text test__result-text_theme_green test__result-text_typography">Отличный результат!</p>
+          <p class="section-text test__result-text test__result-text_theme_green test__result-text_typography">
+            Нажите &laquo;Далее&raquo; чтобы продолжить.
             Если&nbsp;считаете, что&nbsp;сможете&nbsp;лучше, нажмите «Пересдать». В случае
             если результат будет хуже,засчитается наивысший результат.</p>
         </div>
-        <div class="result-test result-test_type_negative result-test_hidden">
-          <h3 class="result-test__title result-test_theme_red" id="resultTitleNegative">33%</h3>
-          <p class="result-test__text result-test_theme_red">К сожалению, вы не набрали проходной результат.</p>
-          <p class="result-test__text result-test_theme_red">Нажмите «Пересдать», чтобы попробовать снова.</p>
+        <div class="test__result test__result_theme_red test__result_position_bottom-indent hide"
+          id="resultContainerNegative">
+          <h3 class="section-title test__result-title test__result-title_theme_red" id="resultTitleNegative">33%</h3>
+          <p class="section-text test__result-text test__result-text_theme_red">К сожалению, вы не набрали проходной
+            результат.</p>
+          <p class="section-text test__result-text test__result-text_theme_red">Нажмите «Пересдать», чтобы попробовать
+            снова.</p>
         </div>
         <button type="reset" form="testForm" id="retakeBtn"
-          class="button button_state_inactive button_width_narrow button_hidden">
+          class="button button_state_inactive button_width_narrow hide">
           <img src="./images/retake-inactive.svg" alt="Пересдать" class="button__image button__image_position_left">
           Пересдать
         </button>
         <button type="submit" id="showResultBtn" class="button button_state_disabled button_width_wide">Показать
           результат</button>
       </div>
-      <div class="button__outside-test">
+      <div class="section-button">
         <button type="button" class="button button_state_inactive button_width_regular" id="backToPreviewBtn">
           <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
           Назад
@@ -167,40 +179,41 @@
         </button>
       </div>
     </section>
-    <div class="hiden-section card_hide" id="about">
-      <section class="card content__design">
-        <div class="card__header content__title">
-          <h2 class="card__title">Тест</h2>
-          <button class="card__return" id="returnBtn">Вернуться к тесту</button>
+    <section class="section conditions hide" id="about">
+      <div class="section-background">
+        <div class="section-header">
+          <h2 class="section-title">Тест</h2>
+          <button class="button__conditions" id="returnBtn">Вернуться к тесту</button>
         </div>
         <a href="" class="content__link"></a>
-        <p class="content__text">Что мы&nbsp;узнали об&nbsp;особенностях привлечения следовых расчётов на&nbsp;ПСР
+        <p class="section-text section-subtitle">Что мы&nbsp;узнали об&nbsp;особенностях привлечения следовых расчётов
+          на&nbsp;ПСР
           и&nbsp;особенностях взаимодействия между участниками ППС</p>
-        <ul class="test__list test__list_start_not">
-          <li class="test__point">
-            <div class="test__image test__score"></div>
-            <div class="test__text">
-              <p class="content__text">Проходной балл:</p>
-              <p class="content__text">80%</p>
+        <ul class="section-list conditions__list">
+          <li class="section-list__item">
+            <div class="icon icon__check-mark"></div>
+            <div class="section-list__condition">
+              <p class="section-text">Проходной балл:</p>
+              <p class="section-text">80%</p>
             </div>
           </li>
-          <li class="test__point">
-            <div class="test__image test__tries"></div>
-            <div class="test__text">
-              <p class="content__text">Количество попыток:</p>
-              <p class="content__text">3</p>
+          <li class="section-list__item">
+            <div class="icon icon__circular-arrow"></div>
+            <div class="section-list__condition">
+              <p class="section-text">Количество попыток:</p>
+              <p class="section-text">3</p>
             </div>
           </li>
-          <li class="test__point">
-            <div class="test__image test__time"></div>
-            <div class="test__text">
-              <p class="content__text">Срок сдачи:</p>
-              <p class="content__text">22.02.2022 г. 16:20 (GMT+3)</p>
+          <li class="section-list__item">
+            <div class="icon icon__sandglass"></div>
+            <div class="section-list__condition">
+              <p class="section-text conditions__text">Срок сдачи:</p>
+              <p class="section-text conditions__text">22.02.2022 г. 16:20 (GMT+3)</p>
             </div>
           </li>
         </ul>
-      </section>
-      <div class="button__outside-test">
+      </div>
+      <div class="section-button">
         <button type="button" class="button button_state_inactive button_width_regular" id="returnBottomBtn">
           <img src="./images/back-arrow-inactive.svg" alt="Назад" class="button__image button__image_position_left">
           Назад
@@ -210,121 +223,127 @@
           <img src="./images/forward-arrow-disabled.svg" alt="Далее" class="button__image button__image_position_right">
         </button>
       </div>
-    </div>
+    </section>
   </main>
-  <aside class="content__sidebar">
-    <div class="sidebar-menu content__design">
-      <h3 class="sidebar-menu__title">Содержание</h3>
-      <ul class="sidebar-menu__progress-list">
-        <li class="sidebar-menu__progress-block">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">1.&nbsp;В&nbsp;каких случаях перспективно применение следовых
-              кинологических расчётов</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Урок</a>
+  <aside class="sidebar-menu">
+    <div class="section-background">
+      <h3 class="section-title ">Содержание</h3>
+      <ul class="section-list sidebar-menu__list">
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">1.&nbsp;В&nbsp;каких случаях перспективно
+            применение следовых
+            кинологических расчётов</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list">
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Урок</a>
             </li>
           </ul>
         </li>
-        <li class="sidebar-menu__progress-block">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">2.&nbsp;Необходимые обеспечительные меры для&nbsp;успешного
-              применения следовых (розыскных собак)</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Урок</a>
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">2.&nbsp;Необходимые обеспечительные меры
+            для&nbsp;успешного
+            применения следовых (розыскных собак)</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list">
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Урок</a>
             </li>
           </ul>
         </li>
-        <li class="sidebar-menu__progress-block">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">3.&nbsp;Особенности привлечения следовых расчётов
-              на&nbsp;ПСР&nbsp;и&nbsp;особенности
-              взаимодействия</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Урок</a>
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">3.&nbsp;Особенности привлечения следовых расчётов
+            на&nbsp;ПСР&nbsp;и&nbsp;особенности
+            взаимодействия</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list">
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Урок</a>
             </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Вебинар</a>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Вебинар</a>
             </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Урок</a>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Урок</a>
             </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Видео</a>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Видео</a>
             </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Тест</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-menu__progress-block">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">4.&nbsp;Корректная постановка задачи кинологу
-              и&nbsp;особенности
-              её&nbsp;исполнения</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Вебинар</a>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Тест</a>
             </li>
           </ul>
         </li>
-        <li class="sidebar-menu__progress-block sidebar-menu__progress-block_active">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">5.&nbsp;Работа «второго номера» совместно со&nbsp;следовым
-              кинологическим расчётом</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Дрессировка поисково-спасательных собак</a>
-            </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Вебинар</a>
-            </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Урок</a>
-            </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_done">
-              <a href="#" class="sidebar-menu__link">Видео</a>
-            </li>
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_test-active">
-              <a href="#" class="sidebar-menu__link">Тест</a>
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">4.&nbsp;Корректная постановка задачи кинологу
+            и&nbsp;особенности
+            её&nbsp;исполнения</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list">
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Вебинар</a>
             </li>
           </ul>
         </li>
-        <li class="sidebar-menu__progress-block">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">6.&nbsp;Оценка качества и&nbsp;особенности анализа результата
-              проделанной следовым кинологическим расчётом работы</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_lesson">
-              <a href="#" class="sidebar-menu__link">Урок</a>
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">5.&nbsp;Работа «второго номера» совместно
+            со&nbsp;следовым
+            кинологическим расчётом</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list sidebar-menu__item-list_open">
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Дрессировка поисково-спасательных собак</a>
+            </li>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Вебинар</a>
+            </li>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Урок</a>
+            </li>
+            <li class="section-list__item">
+              <div class="icon icon__check-mark_active"></div>
+              <a href="#" class="sidebar-menu__link section-text">Видео</a>
+            </li>
+            <li class="section-list__item">
+              <div class="icon icon__test_active"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Тест</a>
             </li>
           </ul>
         </li>
-        <li class="sidebar-menu__progress-block">
-          <a href="#" class="sidebar-menu__progress-block-head">
-            <p class="sidebar-menu__progress-block-text">7.&nbsp;Особенности и&nbsp;пределы использования РПРС
-              ом&nbsp;полученной
-              в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения
-              поисков</p>
-            <div class="sidebar-menu__progress-block-toggler"></div>
-          </a>
-          <ul class="sidebar-menu__stages">
-            <li class="sidebar-menu__stages-item sidebar-menu__stages-item_type_lesson">
-              <a href="#" class="sidebar-menu__link">Урок</a>
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">6.&nbsp;Оценка качества и&nbsp;особенности анализа
+            результата
+            проделанной следовым кинологическим расчётом работы</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list">
+            <li class="section-list__item">
+              <div class="icon icon__lesson"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Урок</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sidebar-menu__item">
+          <p class="section-text sidebar-menu__text">7.&nbsp;Особенности и&nbsp;пределы использования
+            РПРС
+            ом&nbsp;полученной
+            в&nbsp;ходе применения специальной следовой собаки информации в&nbsp;целях успешного разрешения
+            поисков</p>
+          <div class="icon icon__sidebar-menu"></div>
+          <ul class="section-list sidebar-menu__item-list">
+            <li class="section-list__item">
+              <div class="icon icon__lesson"></div>
+              <a href="#" class="sidebar-menu__link section-text sidebar-menu__text">Урок</a>
             </li>
           </ul>
         </li>
