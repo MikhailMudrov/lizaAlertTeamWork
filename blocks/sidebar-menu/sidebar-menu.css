@@ -1,0 +1,12 @@
+.sidebar-menu {
+  grid-area: sidebar-menu;
+  max-width: 424px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1039px) {
+  .sidebar-menu {
+    max-width: 808px;
+    margin: 0 auto;
+  }
+}

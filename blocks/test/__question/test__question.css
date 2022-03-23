@@ -1,0 +1,14 @@
+.test__question {
+  margin: 0;
+  padding-bottom: 16px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1039px) {
+  .test__question {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

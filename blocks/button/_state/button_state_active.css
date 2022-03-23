@@ -1,0 +1,9 @@
+.button_state_active {
+  background-color: #f60;
+  color: #fff;
+  border: 0;
+}
+
+.button_state_active:hover {
+  opacity: 0.8;
+}

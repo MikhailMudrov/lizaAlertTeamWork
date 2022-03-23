@@ -1,0 +1,21 @@
+.section-button {
+  display: grid;
+  column-gap: 24px;
+  margin: 0;
+  padding: 24px 32px;
+  justify-content: end;
+  grid-template-rows: 48px;
+  grid-template-columns: 184px 184px;
+}
+
+@media screen and (max-width: 860px) {
+  .section-button {
+    padding: 12px 8px;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .section-button {
+    grid-template-columns: 140px 140px;
+  }
+}

@@ -1,0 +1,10 @@
+.button_width_narrow {
+  width: 176px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 450px) {
+  .button_width_narrow {
+    width: 135px;
+  }
+}

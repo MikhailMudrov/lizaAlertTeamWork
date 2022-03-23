@@ -1,0 +1,18 @@
+.player__container {
+  background-image: url(../../../images/player-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 808px;
+  height: calc(0.317 * 100vw);
+  max-height: 456px;
+  box-shadow: 0px 0px 4px rgba(233, 234, 237, 0.6), 0px 4px 16px rgba(233, 234, 237, 0.4);
+  border-radius: 10px;
+  position: relative;
+}
+
+@media screen and (max-width: 1039px) {
+  .player__container {
+    height: calc(0.525 * 100vw);
+  }
+}

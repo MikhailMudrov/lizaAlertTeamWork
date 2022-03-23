@@ -1,0 +1,27 @@
+.player__control-bar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 808px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 32px 0;
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  .player__control-bar {
+    padding-left: 16px;
+    padding-right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .player__control-bar {
+    padding-left: 8px;
+    padding-right: 8px;
+    bottom: 8px;
+  }
+}

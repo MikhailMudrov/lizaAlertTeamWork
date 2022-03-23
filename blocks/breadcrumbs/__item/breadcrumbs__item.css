@@ -1,0 +1,8 @@
+.breadcrumbs__item {
+  display: inline;
+  list-style: none;
+}
+
+.breadcrumbs__item:last-of-type {
+  color: #9397a3;
+}

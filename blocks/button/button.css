@@ -1,0 +1,14 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,11 @@
+.sidebar-menu__item-list {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+
+.sidebar-menu__item-list:last-child {
+  padding-bottom: 0;
+}

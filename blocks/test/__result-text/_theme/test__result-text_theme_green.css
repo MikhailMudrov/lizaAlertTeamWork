@@ -1,0 +1,8 @@
+.test__result-text_theme_green {
+  color: #008000;
+  max-width: 680px;
+}
+
+.test__result-text_theme_green:last-child {
+  padding-top: 0;
+}

@@ -1,0 +1,46 @@
+.page {
+  background-color: #fcfcfc;
+  font-family: Golos, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  max-width: 1440px;
+  margin: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern";
+  color: #212329;
+  width: 100%;
+  display: grid;
+  padding: 0;
+  grid-template-columns: 60px minmax(min-content, calc(65% - 60px)) 24px 1fr 60px;
+  grid-template-areas:
+    "header header header header header"
+    ". breadcrumbs breadcrumbs breadcrumbs ."
+    ". content . sidebar-menu ."
+    ". content . sidebar-menu .";
+  row-gap: 24px;
+}
+
+@media screen and (max-width: 1039px) {
+  .page {
+    grid-template-columns: 19px 1fr 19px;
+    grid-template-areas:
+      "header header header"
+      ". breadcrumbs ."
+      ". content ."
+      ". sidebar-menu .";
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page {
+    grid-template-columns: 99%;
+    grid-template-areas:
+      "header"
+      "breadcrumbs"
+      "content"
+      "sidebar-menu";
+  }
+}
