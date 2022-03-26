@@ -1,4 +1,9 @@
 .sidebar-menu__link {
   text-decoration: none;
   color: #212329;
+  transition: opacity .3s ease-in;
+}
+
+.sidebar-menu__link:hover {
+  opacity: .8;
 }
