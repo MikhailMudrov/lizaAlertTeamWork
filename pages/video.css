@@ -46,12 +46,12 @@
 @import url(../blocks/button/__image/_position/button__image_position_right.css);
 
 @import url(../blocks/icon/icon.css);
-@import url(../blocks/icon/__check-mark/_active/icon__check-mark_active.css);
-@import url(../blocks/icon/__test/icon__test.css);
-@import url(../blocks/icon/__video/_active/icon__video_active.css);
-@import url(../blocks/icon/__lesson/icon__lesson.css);
-@import url(../blocks/icon/__sidebar-menu/icon__sidebar-menu.css);
-@import url(../blocks/icon/__sidebar-menu/_rotated/icon__sidebar-menu_rotated.css);
+@import url(../blocks/icon/_picture/icon_picture_success.css);
+@import url(../blocks/icon/_picture/icon_picture_test.css);
+@import url(../blocks/icon/_picture/icon_picture_video-active.css);
+@import url(../blocks/icon/_picture/icon_picture_lesson.css);
+@import url(../blocks/icon/_picture/icon_picture_sidebar-menu.css);
+@import url(../blocks/icon/_rotated/icon_rotated.css);
 @import url(../blocks/icon/_position/icon_position.css);
 
 @import url(../blocks/player/__container/player__container.css);

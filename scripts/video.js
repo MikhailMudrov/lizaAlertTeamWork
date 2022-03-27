@@ -13,11 +13,11 @@ menuItemList.forEach(item => {
   });
 });
 
-const menuIcon = document.querySelectorAll(".icon__sidebar-menu");
+const menuIcon = document.querySelectorAll(".icon_picture_sidebar-menu");
 
 menuIcon.forEach(item => {
   item.parentNode.addEventListener("click", function (evt) {
     evt.stopPropagation();
-    item.classList.toggle("icon__sidebar-menu_rotated");
+    item.classList.toggle("icon_rotated");
   });
 });

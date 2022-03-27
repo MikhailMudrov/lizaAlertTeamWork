@@ -50,7 +50,7 @@ function changeShowResultButtonState() {
 //а во втором вопросе выбран второй вариант.
 function getTestResult() {
   const firstQuestionResult = document.querySelector('#test-item_1').querySelectorAll('.icon__checkbox_active').length > 1;
-  const secondQuestionResult = document.querySelector('#test-item_2').querySelectorAll('.icon__radio').item(1).classList.contains('icon__radio_active');
+  const secondQuestionResult = document.querySelector('#test-item_2').querySelectorAll('.icon_picture_radio').item(1).classList.contains('icon__radio_active');
 
   return firstQuestionResult && secondQuestionResult;
 }
@@ -86,7 +86,7 @@ function styleTestOption(numberOfOption, userAnswersCollection, testOptionsColle
       //item.classList.remove(optionNotActiveClassName);
 
       if (rightAnswer) { //...и это верный ответ.
-        item.classList.add('icon__check-mark');
+        item.classList.add('icon_picture_check-mark');
       } else { //...и это неверный ответ.
         item.classList.add('icon__cross');
       }
@@ -116,11 +116,11 @@ function styleTestAnswers(renderByDataFromSessionStorage, needToReplaceAnswersIn
 
   //Ответы на 1-й вопрос.
   styleTestOption(1, userAnswersCollection1, checkboxInputsCollection, 'icon__checkbox_active',
-    'icon__checkbox', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
+    'icon_picture_checkbox', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 
   //Ответы на 2-й вопрос.
   styleTestOption(2, userAnswersCollection2, radioInputsCollection, 'icon__radio_active',
-    'icon__radio', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
+    'icon_picture_radio', renderByDataFromSessionStorage, needToReplaceAnswersInStorage);
 }
 
 //Обработчик события "click" для элементов ввода типа "checkBox" (1-й вопрос теста).
@@ -166,7 +166,7 @@ radioInputs.forEach(function (radio) {
 //результатов прохождения теста.
 function removeClassesFromTestOption(collection, classToInactivate) {
   const classesToRemove = ['icon__checkbox_active', 'icon__radio_active', 'icon__check-mark_active', 'icon__cross_failure',
-    'icon__check-mark', 'icon__cross'];
+    'icon_picture_check-mark', 'icon__cross'];
 
   collection.forEach((item) => {
     classesToRemove.forEach((classItem) => {
@@ -187,8 +187,8 @@ function initializeTestState() {
   const checkboxInputsCollection = document.querySelector('#test-item_1').querySelectorAll('.icon');
   const radioInputsCollection = document.querySelector('#test-item_2').querySelectorAll('.icon');
 
-  removeClassesFromTestOption(checkboxInputsCollection, 'icon__checkbox');
-  removeClassesFromTestOption(radioInputsCollection, 'icon__radio');
+  removeClassesFromTestOption(checkboxInputsCollection, 'icon_picture_checkbox');
+  removeClassesFromTestOption(radioInputsCollection, 'icon_picture_radio');
 
   //Скрываем видимость карточек с результатом теста.
   if (!resultTestPositive.classList.contains('hide')) {
@@ -508,11 +508,11 @@ menuItemList.forEach(item => {
   });
 });
 
-const menuIcon = document.querySelectorAll(".icon__sidebar-menu");
+const menuIcon = document.querySelectorAll(".icon_picture_sidebar-menu");
 
 menuIcon.forEach(item => {
   item.parentNode.addEventListener("click", function (evt) {
     evt.stopPropagation();
-    item.classList.toggle("icon__sidebar-menu_rotated");
+    item.classList.toggle("icon_rotated");
   });
 });
