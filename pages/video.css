@@ -25,6 +25,7 @@
 @import url(../blocks/section/section.css);
 
 @import url(../blocks/section-list/section-list.css);
+@import url(../blocks/section-list/__internal-list/section-list__internal-list.css);
 
 @import url(../blocks/section-list/__item/section-list__item.css);
 
