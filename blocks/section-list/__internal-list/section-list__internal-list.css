@@ -1,0 +1,7 @@
+.section-list__internal-list {
+  margin: 0;
+  padding: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}

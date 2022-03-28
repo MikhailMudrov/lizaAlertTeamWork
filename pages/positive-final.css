@@ -25,6 +25,7 @@
 @import url(../blocks/section/section.css);
 
 @import url(../blocks/section-list/section-list.css);
+@import url(../blocks/section-list/__internal-list/section-list__internal-list.css);
 
 @import url(../blocks/section-list/__item/section-list__item.css);
 
@@ -46,11 +47,10 @@
 @import url(../blocks/button/__image/_position/button__image_position_right.css);
 
 @import url(../blocks/icon/icon.css);
-@import url(../blocks/icon/__check-mark/_active/icon__check-mark_active.css);
-@import url(../blocks/icon/__lesson/icon__lesson.css);
-@import url(../blocks/icon/__sidebar-menu/icon__sidebar-menu.css);
-@import url(../blocks/icon/__sidebar-menu/_rotated/icon__sidebar-menu_rotated.css);
-@import url(../blocks/icon/__test/_active/icon__test_active.css);
+@import url(../blocks/icon/_picture/icon_picture_success.css);
+@import url(../blocks/icon/_picture/icon_picture_lesson.css);
+@import url(../blocks/icon/_picture/icon_picture_sidebar-menu.css);
+@import url(../blocks/icon/_rotated/icon_rotated.css);
 @import url(../blocks/icon/_position/icon_position.css);
 
 @import url(../blocks/test/__result/test__result.css);

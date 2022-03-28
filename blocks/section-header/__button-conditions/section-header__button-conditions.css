@@ -1,4 +1,4 @@
-.button__conditions {
+.section-header__button-conditions {
   font-weight: 500;
   border: none;
   outline: none;
@@ -12,6 +12,6 @@
   margin: 0;
 }
 
-.button__conditions:hover {
+.section-header__button-conditions:hover {
   border-bottom: 1px solid black;
 }
