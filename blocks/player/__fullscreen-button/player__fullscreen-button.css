@@ -9,12 +9,20 @@
   padding: 0;
   margin-left: 32px;
   transition: opacity 1s ease;
-  transition: rotate 1s ease;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .player__fullscreen-button:hover {
   opacity: 0.5;
-  rotate: 180deg;
+  animation: rotation 1.5s;
 }
 
 @media (max-width: 1024px) {
